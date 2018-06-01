@@ -1,0 +1,252 @@
+{
+    "importer": {
+        "importer_code": "collectionTwoCollectingTeam",
+        "table_num": "20",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionTwoCollectingTeam",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_preferred_labels_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionTwoCollectingTeam",
+    "importer_name": [
+        "CollectionTwomology Collecting Team"
+    ],
+    "table": "ca_entities",
+    "settings": {},
+    "groups": {
+        "_group_collectionTwo-_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:collectionTwo-",
+                    "destination": "ca_entities.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CollectionTwo_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:15:CollectionTwo",
+                    "destination": "ca_entities.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_collectorList_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "collectorList",
+                    "destination": "ca_entities",
+                    "settings": {
+                        "refineries": [
+                            "entitySplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "entitySplitter_relationshipType": "member",
+                        "entitySplitter_delimiter": ";",
+                        "entitySplitter_entityType": "collectionTwoCollector",
+                        "entitySplitter_matchOn": [
+                            "displayname"
+                        ],
+                        "entitySplitter_attributes": {
+                            "idno": "collectionTwo-",
+                            "source_id": "CollectionTwo"
+                        }
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitdtDateCreated_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitdtDateCreated",
+                    "destination": "ca_entities.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitvchrWhoCreated_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitvchrWhoCreated",
+                    "destination": "ca_entities.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitdtDateLastUpdated_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitdtDateLastUpdated",
+                    "destination": "ca_entities.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitvchrWhoLastUpdated_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitvchrWhoLastUpdated",
+                    "destination": "ca_entities.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_verbatimCollectorList_18": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "verbatimCollectorList",
+                    "destination": "ca_entities.preferred_labels",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitID_19": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitID",
+                    "destination": "ca_occurrences",
+                    "settings": {
+                        "refineries": [
+                            "occurrenceSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionTwo-",
+                        "occurrenceSplitter_relationshipType": "collectedBy",
+                        "occurrenceSplitter_occurrenceType": "collectionTwoCollectingEvent",
+                        "occurrenceSplitter_matchOn": [
+                            "idno"
+                        ],
+                        "occurrenceSplitter_dontCreate": 1
+                    }
+                }
+            ]
+        }
+    }
+}

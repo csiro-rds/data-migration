@@ -1,0 +1,304 @@
+{
+    "importer": {
+        "importer_code": "collectionTwoCollectingEvent",
+        "table_num": "67",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionTwoCollectingEvent",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionTwoCollectingEvent",
+    "importer_name": [
+        "CollectionTwomology Collecting Event Mapping"
+    ],
+    "table": "ca_occurrences",
+    "settings": {},
+    "groups": {
+        "_group_intSiteVisitID_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intSiteVisitID",
+                    "destination": "ca_occurrences.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionTwo-"
+                    }
+                }
+            ]
+        },
+        "_group_CollectionTwo_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:15:CollectionTwo",
+                    "destination": "ca_occurrences.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrSiteVisitName_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrSiteVisitName",
+                    "destination": "ca_occurrences.preferred_labels.name",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "applyRegularExpressions": [
+                            {
+                                "match": "[<>]",
+                                "replaceWith": ""
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_intDateStart_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intDateStart",
+                    "destination": "ca_occurrences.eventDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^intDateStart - ^intDateEnd",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "\\b([0-9]{4})([0-9]{2})([0-9]{2})\\b",
+                                "replaceWith": "\\1-\\2-\\3"
+                            },
+                            {
+                                "match": "([0-9])-00-00\\b",
+                                "replaceWith": "\\1"
+                            },
+                            {
+                                "match": "([0-9])-00\\b",
+                                "replaceWith": "\\1"
+                            },
+                            {
+                                "match": "\\b0 - 0\\b",
+                                "replaceWith": "undated"
+                            },
+                            {
+                                "match": " - 0\\b",
+                                "replaceWith": ""
+                            },
+                            {
+                                "match": "\\b0 - ",
+                                "replaceWith": ""
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrCasualTime_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrCasualTime",
+                    "destination": "ca_occurrences.verbatimEventDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitdtDateCreated_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitdtDateCreated",
+                    "destination": "ca_occurrences.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitvchrWhoCreated_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitvchrWhoCreated",
+                    "destination": "ca_occurrences.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitdtDateLastUpdated_18": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitdtDateLastUpdated",
+                    "destination": "ca_occurrences.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_siteVisitvchrWhoLastUpdated_19": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "siteVisitvchrWhoLastUpdated",
+                    "destination": "ca_occurrences.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_intSiteID_20": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intSiteID",
+                    "destination": "ca_places",
+                    "settings": {
+                        "refineries": [
+                            "placeSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionTwo-",
+                        "placeSplitter_placeType": "collectionTwoLocation",
+                        "placeSplitter_relationshipType": "location",
+                        "placeSplitter_attributes": {
+                            "preferred_labels": "^LOCALITY",
+                            "source_id": "CollectionTwo"
+                        },
+                        "placeSplitter_matchOn": [
+                            "idno"
+                        ],
+                        "placeSplitter_placeHierarchy": "dwc",
+                        "placeSplitter_ignoreParent": 1
+                    }
+                }
+            ]
+        }
+    }
+}

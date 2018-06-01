@@ -1,0 +1,187 @@
+{
+    "importer": {
+        "importer_code": "collectionOneCollectors",
+        "table_num": "20",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneCollector",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneCollectors",
+    "importer_name": [
+        "CollectionOnearium Collectors Mapping"
+    ],
+    "table": "ca_entities",
+    "settings": {},
+    "groups": {
+        "_group_CollectionTwo_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:CollectionTwo",
+                    "destination": "ca_entities.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_COLL_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_COLL",
+                    "destination": "ca_entities.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOne-"
+                    }
+                }
+            ]
+        },
+        "_group_COLLECTORNAME_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COLLECTORNAME",
+                    "destination": "ca_entities.preferred_labels",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDBY_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDBY",
+                    "destination": "ca_entities.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDATE_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDATE",
+                    "destination": "ca_entities.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDBY_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDBY",
+                    "destination": "ca_entities.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDATE_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDATE",
+                    "destination": "ca_entities.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

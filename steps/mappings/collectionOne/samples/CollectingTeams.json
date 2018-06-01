@@ -1,0 +1,150 @@
+{
+    "LEGACYID_CTM": {
+        "name": "LEGACYID_CTM",
+        "type": "int(7)",
+        "default": null,
+        "nullable": false,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [
+            9463,
+            9846,
+            319,
+            7729,
+            15350,
+            34314,
+            6604,
+            7493,
+            2,
+            40870,
+            41840,
+            5398,
+            35688,
+            18680,
+            18680,
+            5398,
+            2720,
+            9377,
+            9377,
+            2009,
+            9377,
+            9377,
+            41834,
+            2730,
+            44581,
+            4,
+            9377,
+            2235,
+            3954,
+            5447,
+            3353,
+            43171,
+            43461,
+            24021,
+            44462,
+            1407
+        ],
+        "searchClauses": [
+            "LEGACYID_CTM IN (SELECT DISTINCT LEGACYID_CTM FROM CMS_COLLECTING_EVENT_V WHERE LEGACYID_CE % 1000 = 0)",
+            "LEGACYID_CTM IN (SELECT DISTINCT LEGACYID_CTM FROM CMS_COLLECTING_EVENT_V WHERE LEGACYID_CE IN(728220,855640,208360))"
+        ]
+    },
+    "PRIMARYNAME": {
+        "name": "PRIMARYNAME",
+        "type": "varchar(120)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "OTHERNAME": {
+        "name": "OTHERNAME",
+        "type": "varchar(120)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "primaryMembers": {
+        "name": "primaryMembers",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "otherMembers": {
+        "name": "otherMembers",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    }
+}

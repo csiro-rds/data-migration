@@ -1,0 +1,697 @@
+{
+    "importer": {
+        "importer_code": "collectionOneCollectionUnit",
+        "table_num": "57",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneCollectionUnit",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneCollectionUnit",
+    "importer_name": [
+        "CollectionOnearium Collection Unit Mapping"
+    ],
+    "table": "ca_objects",
+    "settings": {},
+    "groups": {
+        "_group_PRIMARYNAME_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PRIMARYNAME",
+                    "destination": "ca_objects.preferred_labels.name",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^PRIMARYNAME ^RECORDNUMBER"
+                    }
+                }
+            ]
+        },
+        "_group_EXCHANGEUNITID_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "EXCHANGEUNITID",
+                    "destination": "ca_objects.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOneUnit-"
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_CU_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_CU",
+                    "destination": "ca_objects.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "unitID-"
+                    }
+                }
+            ]
+        },
+        "_group_CANB_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:17:CANB",
+                    "destination": "ca_objects.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_CE_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_CE",
+                    "destination": "ca_objects.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "eventID-"
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_CE_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_CE",
+                    "destination": "ca_occurrences",
+                    "settings": {
+                        "refineries": [
+                            "occurrenceSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOne-",
+                        "occurrenceSplitter_occurrenceType": "collectionOneCollectingEvent",
+                        "occurrenceSplitter_relationshipType": "collected",
+                        "occurrenceSplitter_matchOn": [
+                            "idno"
+                        ],
+                        "occurrenceSplitter_attributes": {
+                            "source_id": "CANB"
+                        }
+                    }
+                }
+            ]
+        },
+        "_group_RECORDNUMBER_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "RECORDNUMBER",
+                    "destination": "ca_objects.recordNumber",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_LIFESTAGE_18": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LIFESTAGE",
+                    "destination": "ca_objects.lifeStage",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "lifeStage",
+                        "listItemSplitter_delimiter": ","
+                    }
+                }
+            ]
+        },
+        "_group_ESTABLISHMENTMEANS_19": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ESTABLISHMENTMEANS",
+                    "destination": "ca_objects.establishmentMeans",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_HABIT_20": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "HABIT",
+                    "destination": "ca_objects.habit",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_ORGANISMQUANTITY_21": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ORGANISMQUANTITY",
+                    "destination": "ca_objects.organismQuantity",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_ORIGINOFMATERIAL_22": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ORIGINOFMATERIAL",
+                    "destination": "ca_objects.originOfMaterial",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "originOfMaterial"
+                    }
+                }
+            ]
+        },
+        "_group_ORGANISMQUANTITYTYPE_23": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ORGANISMQUANTITYTYPE",
+                    "destination": "ca_objects.organismQuantityType",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "organismQuantityType"
+                    }
+                }
+            ]
+        },
+        "_group_CollectionTwoMATERIAL_24": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CollectionTwoMATERIAL",
+                    "destination": "ca_objects.collectionOneariumMaterial",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_GARDENSMATERIAL_25": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "GARDENSMATERIAL",
+                    "destination": "ca_objects.gardensMaterial",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_HORTLABELSUFFIX_26": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "HORTLABELSUFFIX",
+                    "destination": "ca_objects.hortLabelSuffix",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_ETHNOFLAG_27": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ETHNOFLAG",
+                    "destination": "ca_objects.ethnoFlag",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            "y",
+                            "n"
+                        ],
+                        "replacement_values": [
+                            "Yes",
+                            "No"
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_EXSIC_28": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "EXSIC",
+                    "destination": "ca_objects.exsic",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            "y",
+                            "n"
+                        ],
+                        "replacement_values": [
+                            "Yes",
+                            "No"
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_EXSICCATAFASCICLE_29": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "EXSICCATAFASCICLE",
+                    "destination": "ca_objects.exsiccataFascicle",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_EXSICCATANUMBER_30": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "EXSICCATANUMBER",
+                    "destination": "ca_objects.exsiccataNumber",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CollectionTwoMATERIALREQUIREDFLAG_31": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CollectionTwoMATERIALREQUIREDFLAG",
+                    "destination": "ca_objects.collectionOneMaterialRequiredFlag",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            "y",
+                            "n"
+                        ],
+                        "replacement_values": [
+                            "Yes",
+                            "No"
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CollectionTwoMATERIALREQDDESCRIPTION_32": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CollectionTwoMATERIALREQDDESCRIPTION",
+                    "destination": "ca_objects.collectionOneMaterialReqdDescription",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_INTERNALNOTE_33": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "INTERNALNOTE",
+                    "destination": "ca_objects.internalNote",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "Editoral Comments:",
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_OCCURRENCEREMARKS_34": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "OCCURRENCEREMARKS",
+                    "destination": "ca_objects.occurrenceRemarks",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDBY_35": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDBY",
+                    "destination": "ca_objects.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDATE_36": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDATE",
+                    "destination": "ca_objects.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDBY_37": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDBY",
+                    "destination": "ca_objects.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDATE_38": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDATE",
+                    "destination": "ca_objects.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        }
+    }
+}

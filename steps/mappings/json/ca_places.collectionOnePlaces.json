@@ -1,0 +1,853 @@
+{
+    "importer": {
+        "importer_code": "collectionOnePlaces",
+        "table_num": "72",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "collectionOnePlaces"
+            ],
+            "type": "collectionOneLocation",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "overwrite_on_idno",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOnePlaces",
+    "importer_name": [
+        "CollectionOnearium Places and Political Regions Mapping"
+    ],
+    "table": "ca_places",
+    "settings": {},
+    "groups": {
+        "_group_CANB_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:CANB",
+                    "destination": "ca_places.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_dwc_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:15:dwc",
+                    "destination": "ca_places.hierarchy_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_LOCN_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_LOCN",
+                    "destination": "ca_places.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOne-"
+                    }
+                }
+            ]
+        },
+        "_group_LOCALITY_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LOCALITY",
+                    "destination": "ca_places.preferred_labels.name",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_COUNTRY_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COUNTRY",
+                    "destination": "ca_places.country",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LOCALITY_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LOCALITY",
+                    "destination": "ca_places.locality",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_NEARESTNAMEDPLACE_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "NEARESTNAMEDPLACE",
+                    "destination": "ca_places.nearestNamedPlace",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_STATEPROVINCE_18": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "STATEPROVINCE",
+                    "destination": "ca_places.stateProvince",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_COUNTY_19": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COUNTY",
+                    "destination": "ca_places.county",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_VERBATIMLATITUDE_20": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "VERBATIMLATITUDE",
+                    "destination": "ca_places.verbatimLatitude",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_VERBATIMLONGITUDE_21": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "VERBATIMLONGITUDE",
+                    "destination": "ca_places.verbatimLongitude",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_DECIMALLATITUDE_22": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "DECIMALLATITUDE",
+                    "destination": "ca_places.georeference",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "formatWithTemplate": "^DECIMALLATITUDE,^DECIMALLONGITUDE",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "(-?\\d+\\.?\\d*,-?\\d+\\.?\\d*)",
+                                "replaceWith": "[\\1]"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_COORDINATESZONE_23": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COORDINATESZONE",
+                    "destination": "ca_places.coordinatesZone",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_COORDINATESEASTING_24": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COORDINATESEASTING",
+                    "destination": "ca_places.coordinatesEasting",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_COORDINATESNORTHING_25": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COORDINATESNORTHING",
+                    "destination": "ca_places.coordinatesNorthing",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_COORDINATEUNCERTAINTYQUANTITY_26": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COORDINATEUNCERTAINTYQUANTITY",
+                    "destination": "ca_places.coordinateUncertainty",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^COORDINATEUNCERTAINTYQUANTITY ^COORDINATEUNCERTAINTYUNIT"
+                    }
+                }
+            ]
+        },
+        "_group_GEOREFERENCESOURCES_27": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "GEOREFERENCESOURCES",
+                    "destination": "ca_places.georeferenceProtocol",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "listItemSplitter_list": "georeferenceProtocol",
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_matchOn": [
+                            "preferred_labels"
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_GEOREFERENCEREMARKS_28": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "GEOREFERENCEREMARKS",
+                    "destination": "ca_places.georeferenceRemarks",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_ELEVATIONMINIMUM_29": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ELEVATIONMINIMUM",
+                    "destination": "ca_places.minimumElevation",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^ELEVATIONMINIMUM ^ELEVATIONUNIT"
+                    }
+                }
+            ]
+        },
+        "_group_ELEVATIONMAXIMUM_30": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ELEVATIONMAXIMUM",
+                    "destination": "ca_places.maximumElevation",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^ELEVATIONMAXIMUM ^ELEVATIONUNIT"
+                    }
+                }
+            ]
+        },
+        "_group_ELEVATIONBYCODE_31": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ELEVATIONBYCODE",
+                    "destination": "ca_places.elevationMethod",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_ELEVATIONUNCERTAINTY_32": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ELEVATIONUNCERTAINTY",
+                    "destination": "ca_places.elevationUncertainty",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^ELEVATIONUNCERTAINTY ^ELEVATIONUNIT"
+                    }
+                }
+            ]
+        },
+        "_group_DEPTHMINIMUM_33": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "DEPTHMINIMUM",
+                    "destination": "ca_places.minimumDepth",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^DEPTHMINIMUM ^DEPTHUNIT"
+                    }
+                }
+            ]
+        },
+        "_group_DEPTHMAXIMUM_34": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "DEPTHMAXIMUM",
+                    "destination": "ca_places.maximumDepth",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^DEPTHMAXIMUM ^DEPTHUNIT"
+                    }
+                }
+            ]
+        },
+        "_group_GEODETICDATUM_35": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "GEODETICDATUM",
+                    "destination": "ca_places.geodeticDatum",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_LOCN_36": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_LOCN",
+                    "destination": "ca_places.parent_id",
+                    "settings": {
+                        "refineries": [
+                            "placeHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "placeHierarchyBuilder_parents": [
+                            {
+                                "idno": "collectionOneHier-^COUNTY",
+                                "name": "^COUNTY",
+                                "type": "county",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CANB"
+                                },
+                                "rules": [
+                                    {
+                                        "trigger": "^COUNTY =~ \/^$\/",
+                                        "actions": [
+                                            {
+                                                "action": "SKIP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "idno": "collectionOneHier-^STATEPROVINCE",
+                                "name": "^STATEPROVINCE",
+                                "type": "state",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CANB"
+                                },
+                                "rules": [
+                                    {
+                                        "trigger": "^STATEPROVINCE =~ \/^$\/",
+                                        "actions": [
+                                            {
+                                                "action": "SKIP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "idno": "collectionOneHier-^COUNTRY",
+                                "name": "^COUNTRY",
+                                "type": "country",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CANB"
+                                },
+                                "rules": [
+                                    {
+                                        "trigger": "^COUNTRY =~ \/^$\/",
+                                        "actions": [
+                                            {
+                                                "action": "SKIP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDBY_37": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDBY",
+                    "destination": "ca_places.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDDATE_38": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDDATE",
+                    "destination": "ca_places.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDBY_39": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDBY",
+                    "destination": "ca_places.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDDATE_40": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDDATE",
+                    "destination": "ca_places.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_1_41": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:51:1",
+                    "destination": "ca_places.is_enabled",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_ACCESSSTATUS_42": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ACCESSSTATUS",
+                    "destination": "ca_places.access",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            "not accessible to public",
+                            "accessible to public",
+                            "restricted public access",
+                            "0",
+                            "1",
+                            "2"
+                        ],
+                        "replacement_values": [
+                            "0",
+                            "1",
+                            "2",
+                            "0",
+                            "1",
+                            "2"
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_INTERNALNOTE_43": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "INTERNALNOTE",
+                    "destination": "ca_places.internalNote",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "importer": {
+        "importer_code": "collectionTwoIdentification",
+        "table_num": "57",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionTwoCollectionUnit",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionTwoIdentification",
+    "importer_name": [
+        "CollectionTwomology Identification Mapping"
+    ],
+    "table": "ca_objects",
+    "settings": {},
+    "groups": {
+        "ca_list_items.preferred_labels": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrEpithet",
+                    "destination": "ca_list_items",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "listItemSplitter_relationshipType": "identification",
+                        "listItemSplitter_listItemType": "collectionTwoTaxon",
+                        "listItemSplitter_matchOn": [
+                            "idno"
+                        ],
+                        "listItemSplitter_list": "taxonomy",
+                        "listItemSplitter_ignoreParent": 1,
+                        "listItemSplitter_attributes": {
+                            "is_enabled": 1,
+                            "idno": "collectionTwo-^intBiotaID",
+                            "source_id": "CollectionTwo"
+                        },
+                        "listItemSplitter_interstitial": {
+                            "legacyId": [
+                                "ident-^intMaterialID",
+                                "taxon-^intBiotaID",
+                                "unit-^intMaterialID"
+                            ],
+                            "verbatimDateIdentified": null,
+                            "dateIdentified": "^dtIDDate",
+                            "currentDetFlag": "yes",
+                            "identifiedBy": "^vchrIDBy",
+                            "tagName": null,
+                            "authorisedBy": null,
+                            "identificationReferences": "^identificationReferences",
+                            "identificationRemarks": "^vchrIDNotes",
+                            "internalNote": "^internalNote",
+                            "identifierRole": null,
+                            "identificationQualifier": "^vchrIDNameQual",
+                            "nameAddendum": null,
+                            "identificationMethod": "^identificationMethod",
+                            "referencePage": "^vchrIDRefPage",
+                            "identificationReferenceCode": "^vchrRefCode",
+                            "identificationVerificationStat": "^vchrIDAccuracy",
+                            "identificationSequence": "1",
+                            "rank": "1",
+                            "createdBy": null,
+                            "createDate": null,
+                            "updatedBy": null,
+                            "updateDate": null
+                        }
+                    }
+                }
+            ]
+        },
+        "intMaterialID": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intMaterialID",
+                    "destination": "ca_objects.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionTwoUnit-"
+                    }
+                }
+            ]
+        },
+        "_group_CollectionTwo_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:17:CollectionTwo",
+                    "destination": "ca_objects.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

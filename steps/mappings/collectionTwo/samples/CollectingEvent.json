@@ -1,0 +1,793 @@
+{
+    "intSiteVisitID": {
+        "name": "intSiteVisitID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [
+            2100,
+            2900,
+            2000
+        ],
+        "searchClauses": [
+            "intSiteVisitID % 100 = 0"
+        ],
+        "values": []
+    },
+    "vchrSiteVisitName": {
+        "name": "vchrSiteVisitName",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrFieldNumber": {
+        "name": "vchrFieldNumber",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrCollector": {
+        "name": "vchrCollector",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "tintDateType": {
+        "name": "tintDateType",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "intDateStart": {
+        "name": "intDateStart",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "#CMS-2062 - end date before start date\nintDateStart > intDateEnd AND intDateEnd > 0",
+            "#CMS-2062 - specific reord with invalid date\nvchrSiteVisitName like '%Naumann,I.D. 13 May, 1981%'",
+            "#CMS-2062 - identified records in comments\nintSiteVisitID IN(115281, 115218, 115031, 115029, 114972, 114170, 112680, 110875, 110413, 110400, 108740, 105563, 99365, 90512, 87990, 85021, 80134, 80133, 78549, 78542, 76073, 75738, 72736, 72729, 72725, 69662, 62693, 62033, 61969, 59607, 57806, 43007, 41436, 39923, 37521, 33788, 33787, 33778, 32408, 31831, 30727, 29279, 28338, 27970, 24262, 8608, 8145 ,61969, 29180, 119239, 42213,59660)",
+            "#CMS-2062 - date has 00 for month but no 00 for day\nintDateStart%100 != 0 AND FLOOR(intDateStart\/100)%100 = 0 OR intDateEnd%100 != 0 AND FLOOR(intDateEnd\/100)%100 = 0"
+        ],
+        "values": []
+    },
+    "intDateEnd": {
+        "name": "intDateEnd",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "intTimeStart": {
+        "name": "intTimeStart",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "intTimeEnd": {
+        "name": "intTimeEnd",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrCasualTime": {
+        "name": "vchrCasualTime",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteVisitdtDateCreated": {
+        "name": "siteVisitdtDateCreated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteVisitvchrWhoCreated": {
+        "name": "siteVisitvchrWhoCreated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteVisitdtDateLastUpdated": {
+        "name": "siteVisitdtDateLastUpdated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteVisitvchrWhoLastUpdated": {
+        "name": "siteVisitvchrWhoLastUpdated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteVisitTintTemplate": {
+        "name": "siteVisitTintTemplate",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteVisitGUID": {
+        "name": "siteVisitGUID",
+        "type": "varchar(36)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "intSiteID": {
+        "name": "intSiteID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": false,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrSiteName": {
+        "name": "vchrSiteName",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "intPoliticalRegionID": {
+        "name": "intPoliticalRegionID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "intSiteGroupID": {
+        "name": "intSiteGroupID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "tintLocalType": {
+        "name": "tintLocalType",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrLocal": {
+        "name": "vchrLocal",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrDistanceFromPlace": {
+        "name": "vchrDistanceFromPlace",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrDirFromPlace": {
+        "name": "vchrDirFromPlace",
+        "type": "varchar(10)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrInformalLocal": {
+        "name": "vchrInformalLocal",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "tintPosCoordinates": {
+        "name": "tintPosCoordinates",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "tintPosAreaType": {
+        "name": "tintPosAreaType",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "fltPosY1": {
+        "name": "fltPosY1",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "fltPosX1": {
+        "name": "fltPosX1",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "fltPosX2": {
+        "name": "fltPosX2",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "fltPosY2": {
+        "name": "fltPosY2",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "tintPosXYDisplayFormat": {
+        "name": "tintPosXYDisplayFormat",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosSource": {
+        "name": "vchrPosSource",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosError": {
+        "name": "vchrPosError",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosWho": {
+        "name": "vchrPosWho",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosDate": {
+        "name": "vchrPosDate",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosOriginal": {
+        "name": "vchrPosOriginal",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosUTMSource": {
+        "name": "vchrPosUTMSource",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosUTMMapProj": {
+        "name": "vchrPosUTMMapProj",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosUTMMapName": {
+        "name": "vchrPosUTMMapName",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrPosUTMMapVer": {
+        "name": "vchrPosUTMMapVer",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "tintElevType": {
+        "name": "tintElevType",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "fltElevUpper": {
+        "name": "fltElevUpper",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "fltElevLower": {
+        "name": "fltElevLower",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "fltElevDepth": {
+        "name": "fltElevDepth",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrElevUnits": {
+        "name": "vchrElevUnits",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrElevSource": {
+        "name": "vchrElevSource",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrElevError": {
+        "name": "vchrElevError",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoEra": {
+        "name": "vchrGeoEra",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoState": {
+        "name": "vchrGeoState",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoPlate": {
+        "name": "vchrGeoPlate",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoFormation": {
+        "name": "vchrGeoFormation",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoMember": {
+        "name": "vchrGeoMember",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoBed": {
+        "name": "vchrGeoBed",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoName": {
+        "name": "vchrGeoName",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoAgeBottom": {
+        "name": "vchrGeoAgeBottom",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoAgeTop": {
+        "name": "vchrGeoAgeTop",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "vchrGeoNotes": {
+        "name": "vchrGeoNotes",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "sitedtDateCreated": {
+        "name": "sitedtDateCreated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "sitevchrWhoCreated": {
+        "name": "sitevchrWhoCreated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "sitedtDateLastUpdated": {
+        "name": "sitedtDateLastUpdated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "sitevchrWhoLastUpdated": {
+        "name": "sitevchrWhoLastUpdated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "intOrder": {
+        "name": "intOrder",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteTintTemplate": {
+        "name": "siteTintTemplate",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteGUID": {
+        "name": "siteGUID",
+        "type": "varchar(36)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    }
+}

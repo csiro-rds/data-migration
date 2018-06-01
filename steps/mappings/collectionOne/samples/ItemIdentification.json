@@ -1,0 +1,130 @@
+{
+    "LEGACYID_IDENT": {
+        "name": "LEGACYID_IDENT",
+        "type": "int(8)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [
+            "LEGACYID_IDENT IN (SELECT DISTINCT LEGACYID_IDENT FROM _test_collectionOne_Identification)"
+        ]
+    },
+    "LEGACYID_CIIDENT": {
+        "name": "LEGACYID_CIIDENT",
+        "type": "int(8)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LEGACYID_CI": {
+        "name": "LEGACYID_CI",
+        "type": "int(8)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "TYPEOFTYPE": {
+        "name": "TYPEOFTYPE",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "TYPEQUALIFIER": {
+        "name": "TYPEQUALIFIER",
+        "type": "varchar(10)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "TYPESTATUS": {
+        "name": "TYPESTATUS",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CA_IDNO": {
+        "name": "CA_IDNO",
+        "type": "varchar(38)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "EXCHANGEUNITID": {
+        "name": "EXCHANGEUNITID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

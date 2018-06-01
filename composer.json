@@ -1,0 +1,110 @@
+{
+    "name": "csiro/data-migration",
+    "description": "Data Migration processes for the CSIRO Collection Management Service.",
+    "version": "0.2.0",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Kehan Harman",
+            "email": "kehan.harman@gaiaresources.com.au"
+        },{
+            "name": "Ben New",
+            "email": "ben.new@gaiaresources.com.au"
+        },{
+            "name": "Sean Anderson",
+            "email": "sean.anderson@gaiaresources.com.au"
+        },{
+            "name": "Vivek Pulukuri",
+            "email": "vivek.pulukuri@csiro.au"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CSIROCMS\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/yaml": "^3.2",
+        "monolog/monolog": "^1.22",
+        "symfony/dependency-injection": "^3.2.0",
+        "pentaho/data-integration": "^7.0",
+        "jtds/jtds": "^1.2",
+        "slowprog/composer-copy-file": "^0.2.0",
+        "symfony/process": "^3.2",
+        "mysql/mysql-connector-java": "^5.1",
+        "oracle/ojdbc8": "^12.1",
+        "google/apiclient": "^2.1",
+        "symfony/finder": "^3.3",
+        "symfony/console": "~3.2.0",
+        "symfony/config": "~3.2.0",
+        "phpunit/phpunit": "^6.3",
+        "spatie/db-dumper": "^2.7",
+        "symfony/stopwatch": "^3.2"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "SlowProg\\CopyFile\\ScriptHandler::copy"
+        ],
+        "post-update-cmd": [
+            "SlowProg\\CopyFile\\ScriptHandler::copy"
+        ]
+    },
+    "extra": {
+        "copy-file": {
+            "vendor/jtds/jtds/jtds-1.2.5.jar": "vendor/pentaho/data-integration/lib/",
+            "vendor/mysql/mysql-connector-java/mysql-connector-java-5.1.42-bin.jar": "vendor/pentaho/data-integration/lib/",
+            "vendor/oracle/ojdbc8/ojdbc8.jar": "vendor/pentaho/data-integration/lib/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "pentaho/data-integration",
+                "version": "7.0.0",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.sourceforge.net/project/pentaho/Data%20Integration/7.0/pdi-ce-7.0.0.0-25.zip",
+                    "reference": "7.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jtds/jtds",
+                "version": "1.2.5",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip",
+                    "reference": "1.2"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mysql/mysql-connector-java",
+                "version": "5.1.42",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.42.zip",
+                    "reference": "5.1"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "oracle/ojdbc8",
+                "version": "12.1.0",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://s3-ap-southeast-1.amazonaws.com/ojdbc8/ojdbc8.zip",
+                    "reference": "12.1"
+                }
+            }
+        }
+    ]
+}

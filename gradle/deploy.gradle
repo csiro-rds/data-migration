@@ -1,0 +1,92 @@
+/*
+ * Scripts for deploying CSIRO CMS Data Migration Scripts.
+ *
+ * NB: This script is conditionally applied. Any new tasks will need to be included in the conditions in build.gradle.
+ *
+ * Usage: gradle deployToServer
+ */
+
+// Make sure the required params are supplied. This is generally done by the CI job's
+// "Properties Content" field with a prefix of ORG_GRADLE_PROJECT_
+// e.g.  ORG_GRADLE_PROJECT_deployuser=auser
+// or they can be added locally to your gradle.properties
+assert project.hasProperty('deployuser'), 'Properties for deployment must be provided'
+assert project.hasProperty('deploypassword'), 'Properties for deployment must be provided'
+assert System.env.BUILD_NUMBER, 'Deploying must be done by the appropriate Jenkins job'
+assert project.hasProperty('remoteHost'), 'The remote host for the deployment must be specified'
+assert project.hasProperty('appUser'), 'The application user name must be specified'
+assert project.hasProperty('targetEnv'), 'The name of the target environment must be specified'
+
+// Ssh settings
+ssh {
+  knownHosts = allowAnyHosts    // Disable host key verification
+}
+
+// Define the remote server we are interacting with.
+remotes {
+    targetServer {
+        host = remoteHost
+        user = deployuser
+        password = deploypassword
+    }
+}
+
+def migrationRemoteBaseDir = '/srv/cms/deployment/data-migration'
+def configFilename = '/srv/cms/properties/local.yml'
+def downloadFolder = "${buildDir}/download"
+def downloadedArtifact = file("${downloadFolder}/data-migration-${project.version}.zip")
+def repoUrl = 'http://jenkins-apps.it.csiro.au:8081/nexus/service/local/artifact/maven/redirect?r=cd'
+
+task makeDownloadFolder() {
+    mkdir file(downloadFolder)
+}
+
+task downloadBinaryArchive(dependsOn: makeDownloadFolder) {
+    description 'Download our target zip file from the nexus repository'
+    group 'Continuous Delivery'
+
+    doLast {
+        ext {
+            binaryUrl = "${repoUrl}&g=${project.group}&a=${distributions.main.baseName}&e=zip&v=${project.version}"
+            println binaryUrl
+        }
+
+        ant.get(src: binaryUrl, dest: downloadedArtifact)
+    }
+}
+
+task deployToServer(type: SshTask, dependsOn: downloadBinaryArchive) {
+    description 'Deploy Data Migration Scripts to the required server. Intended for use by the Jenkins deploy jobs only.'
+    group 'Continuous Delivery'
+
+    doFirst {
+        println "Deploying CMS Data Migration ${project.version} to server ${remotes.targetServer.host}"
+    }
+
+    // Note: Each sudo command here must be specifically allowed in the remote host sudoers config.
+    session(remotes.targetServer) {
+        def asUser = "sudo -u ${appUser}"
+        def remoteProjectRootDir = "${migrationRemoteBaseDir}"
+        def remoteProjectDistDir = "/tmp"
+        def remoteProjectDist = "${remoteProjectDistDir}/data-migration-${project.version}.zip"
+
+        println "Uploading ${downloadedArtifact} to ${remoteProjectDist}"
+        put downloadedArtifact, "${remoteProjectDist}"
+
+        println "Extracting ${remoteProjectDist} to ${remoteProjectDistDir} (overwriting existing if it exists)"
+        println("${asUser} unzip -o \"${remoteProjectDist}\" -d \"${remoteProjectDistDir}\"")
+        execute("${asUser} unzip -o \"${remoteProjectDist}\" -d \"${remoteProjectDistDir}\"")
+
+        println "Copying extracted files from ${remoteProjectDistDir}/${project.version} to ${remoteProjectRootDir}"
+        println("${asUser} rsync -a --exclude=data --exclude=config/local.yml --exclude=logs --delete-after \"${remoteProjectDistDir}/data-migration-${project.version}/\" \"${remoteProjectRootDir}/\"")
+        execute("${asUser} rsync -a --exclude=data --exclude=config/local.yml --exclude=logs --delete-after \"${remoteProjectDistDir}/data-migration-${project.version}/\" \"${remoteProjectRootDir}/\"")
+
+        println "Installing composer dependencies"
+        println("${asUser} composer --working-dir=\"${migrationRemoteBaseDir}\" install")
+        execute("${asUser} composer --working-dir=\"${migrationRemoteBaseDir}\" install")
+
+        println "Linking in configuration file"
+        println("${asUser} ln -fns \"${configFilename}\" \"${migrationRemoteBaseDir}/config/\"")
+        execute("${asUser} ln -fns \"${configFilename}\" \"${migrationRemoteBaseDir}/config/\"")
+    }
+}

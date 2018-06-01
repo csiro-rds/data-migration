@@ -1,0 +1,51 @@
+###
+OPTIONS  http://{{user}}:{{password}}@{{host}}{{path}}service.php/browse/ca_occurrences
+
+###
+POST http://{{user}}:{{password}}@{{host}}{{path}}service.php/browse/ca_occurrences?pretty=1&lang=en_AU
+Content-Type: application/json
+
+{
+	"criteria": {
+		"type_facet": [
+			"159"
+		]
+	},
+	"bundles": {
+
+	"ca_occurrences.source_id": {
+		"convertCodesToIdno": true
+	},
+	"ca_occurrences.type_id":{
+		"convertCodesToIdno": true
+	},
+    "ca_occurrences.eventDate": {},
+    "ca_places": {},
+    "ca_occurrences.habitat": {},
+    "ca_occurrences.topography": {},
+    "ca_occurrences.aspect": {
+        "display": true
+    },
+    "ca_occurrences.slope": {},
+    "ca_occurrences.geologicalSubstrate": {},
+    "ca_occurrences.substrate": {},
+    "ca_occurrences.soil": {},
+    "ca_occurrences.vegetation": {},
+    "ca_occurrences.associatedSpecies": {},
+    "ca_entities": {},
+    "ca_occurrences.collectorCertainty": {},
+    "ca_occurrences.startDate": {},
+    "ca_occurrences.endDate": {},
+    "ca_occurrences.verbatimEventDate": {},
+    "ca_occurrences.floraOf": {},
+    "ca_occurrences.recordOrigin": {},
+    "ca_occurrences.createdBy": {},
+    "ca_occurrences.createDate": {},
+    "ca_occurrences.updatedBy": {},
+    "ca_occurrences.updateDate": {}
+	}
+}
+
+###
+
+

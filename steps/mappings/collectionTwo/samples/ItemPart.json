@@ -1,0 +1,274 @@
+{
+    "newMaterialId": {
+        "name": "newMaterialId",
+        "type": "varchar(23)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "accessionSuffix": {
+        "name": "accessionSuffix",
+        "type": "double",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "@new_material_id:=@newMaterialId": {
+        "name": "@new_material_id:=@newMaterialId",
+        "type": "mediumtext",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrAccessionNo": {
+        "name": "vchrAccessionNo",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intMaterialID": {
+        "name": "intMaterialID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [
+            "intMaterialID in (SELECT intMaterialID FROM _test_collectionTwo_CollectionUnit)"
+        ]
+    },
+    "accOrder": {
+        "name": "accOrder",
+        "type": "bigint(20)",
+        "default": "0",
+        "nullable": false,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "itemType": {
+        "name": "itemType",
+        "type": "varchar(17)",
+        "default": "",
+        "nullable": false,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "preparationMethod": {
+        "name": "preparationMethod",
+        "type": "varchar(21)",
+        "default": "",
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "MaterialPartID": {
+        "name": "MaterialPartID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartPartName": {
+        "name": "PartPartName",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartSampleType": {
+        "name": "PartSampleType",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartNoSpecimens": {
+        "name": "PartNoSpecimens",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartNoSpecimensQual": {
+        "name": "PartNoSpecimensQual",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartLifestage": {
+        "name": "PartLifestage",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartGender": {
+        "name": "PartGender",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartRegNo": {
+        "name": "PartRegNo",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartCondition": {
+        "name": "PartCondition",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartStorageSite": {
+        "name": "PartStorageSite",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartStorageMethod": {
+        "name": "PartStorageMethod",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartCurationStatus": {
+        "name": "PartCurationStatus",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartNoOfUnits": {
+        "name": "PartNoOfUnits",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartNotes": {
+        "name": "PartNotes",
+        "type": "longtext",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartOnLoan": {
+        "name": "PartOnLoan",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartGUID": {
+        "name": "PartGUID",
+        "type": "varchar(36)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "PartBasedOnID": {
+        "name": "PartBasedOnID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "isMaster": {
+        "name": "isMaster",
+        "type": "bigint(20)",
+        "default": "0",
+        "nullable": false,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "preparationType": {
+        "name": "preparationType",
+        "type": "varchar(4)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

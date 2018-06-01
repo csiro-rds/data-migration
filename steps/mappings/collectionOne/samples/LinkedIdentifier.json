@@ -1,0 +1,134 @@
+{
+    "LEGACYID_CI": {
+        "name": "LEGACYID_CI",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "LEGACYID_CI IN (SELECT DISTINCT LEGACYID_CI FROM _test_collectionOne_CollectionItem)"
+        ],
+        "values": []
+    },
+    "LEGACYID_CU": {
+        "name": "LEGACYID_CU",
+        "type": "int(7)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [
+            "LEGACYID_CU IN (SELECT DISTINCT LEGACYID_CU FROM _test_collectionOne_CollectionUnit)"
+        ],
+        "values": []
+    },
+    "IDENTIFIERFOR": {
+        "name": "IDENTIFIERFOR",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "LINKEDIDENTIFIER": {
+        "name": "LINKEDIDENTIFIER",
+        "type": "varchar(92)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "LINKEDIDENTIFIERREMARKS": {
+        "name": "LINKEDIDENTIFIERREMARKS",
+        "type": "varchar(240)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "LINKEDURI": {
+        "name": "LINKEDURI",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "TYPEOFIDENTIFIER": {
+        "name": "TYPEOFIDENTIFIER",
+        "type": "varchar(8)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "UPDATEBY": {
+        "name": "UPDATEBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "CA_IDNO": {
+        "name": "CA_IDNO",
+        "type": "varchar(38)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

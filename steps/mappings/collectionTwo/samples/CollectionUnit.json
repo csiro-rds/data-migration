@@ -1,0 +1,400 @@
+{
+    "intMaterialID": {
+        "name": "intMaterialID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "intMaterialID % 100 = 0"
+        ]
+    },
+    "tintTemplate": {
+        "name": "tintTemplate",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrMaterialName": {
+        "name": "vchrMaterialName",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intSiteVisitID": {
+        "name": "intSiteVisitID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "intSiteVisitID % 100 = 0"
+        ]
+    },
+    "vchrAccessionNo": {
+        "name": "vchrAccessionNo",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrRegNo": {
+        "name": "vchrRegNo",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrCollectorNo": {
+        "name": "vchrCollectorNo",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intBiotaID": {
+        "name": "intBiotaID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDBy": {
+        "name": "vchrIDBy",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "dtIDDate": {
+        "name": "dtIDDate",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intIDRefID": {
+        "name": "intIDRefID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDMethod": {
+        "name": "vchrIDMethod",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDAccuracy": {
+        "name": "vchrIDAccuracy",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDNameQual": {
+        "name": "vchrIDNameQual",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDNotes": {
+        "name": "vchrIDNotes",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrInstitution": {
+        "name": "vchrInstitution",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrCollectionMethod": {
+        "name": "vchrCollectionMethod",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrAbundance": {
+        "name": "vchrAbundance",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrMacroHabitat": {
+        "name": "vchrMacroHabitat",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrMicroHabitat": {
+        "name": "vchrMicroHabitat",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrSource": {
+        "name": "vchrSource",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intAssociateOf": {
+        "name": "intAssociateOf",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrSpecialLabel": {
+        "name": "vchrSpecialLabel",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrOriginalLabel": {
+        "name": "vchrOriginalLabel",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "dtDateCreated": {
+        "name": "dtDateCreated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrWhoCreated": {
+        "name": "vchrWhoCreated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "dtDateLastUpdated": {
+        "name": "dtDateLastUpdated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrWhoLastUpdated": {
+        "name": "vchrWhoLastUpdated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intTrapID": {
+        "name": "intTrapID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDRefPage": {
+        "name": "vchrIDRefPage",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "GUID": {
+        "name": "GUID",
+        "type": "varchar(36)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "txtAssocDescription": {
+        "name": "txtAssocDescription",
+        "type": "mediumtext",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "txtNotes": {
+        "name": "txtNotes",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

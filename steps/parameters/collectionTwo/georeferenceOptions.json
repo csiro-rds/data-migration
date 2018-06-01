@@ -1,0 +1,9 @@
+{
+	"formatWithTemplate": "^fltPosY1,^fltPosX1",
+	"applyRegularExpressions": [
+		{
+			"match": "(-?\\d+\\.?\\d*,-?\\d+\\.?\\d*)",
+			"replaceWith": "[\\1]"
+		}
+	]
+}

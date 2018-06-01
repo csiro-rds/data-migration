@@ -1,0 +1,26 @@
+POST http://{{user}}:{{password}}@{{host}}{{path}}/service.php/browse/ca_list_items?pretty=1&sort=hier_left
+Content-Type: application/json
+
+{
+	"criteria": {
+		"type_facet": [
+			7
+		]
+	},
+	"bundles": {
+		"ca_list_items.status": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.type_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_lists.list_code": {},
+		"ca_list_items.source_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_list_items.is_enabled": {},
+		"ca_list_items.nomenclaturalCode": {
+			"convertCodesToIdno": true
+		}
+	}
+}

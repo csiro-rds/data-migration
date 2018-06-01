@@ -1,0 +1,34 @@
+parameters:
+    collectionTwo:
+        connection: collectionTwointerim
+        other_import_params: -d DEBUG -l logs/ --direct --no-search-indexing
+        mappings:
+            -
+                name: CollectingEvent
+                table_name: collectionTwo_collecting_event
+                where_clause: 'limit 10'
+            -
+                name: Places
+                table_name: collectionTwo_location
+                where_clause: 'where intPoliticalRegionID in (2599, 2602, 2603, 2606, 2607, 2608, 2609, 2610, 2611, 47183, 1451, 1452, 1453, 1454, 74733, 74734, 74735, 74739, 74789, 75504, 76160, 76735, 76736, 76737, 76739, 76740, 76745, 76746, 76747, 76748, 76749, 76751, 76763, 76800, 76801 )'
+    collectionOne:
+        connection: collectionOneinterim
+        other_import_params: -d DEBUG -l logs/ --direct --no-search-indexing
+        mappings:
+            -
+                name: Places
+                table_name: COLLECTING_EVENT_V
+                where_clause: WHERE FALSE
+            -
+                name: Collectors
+                table_name: collectionOne_collector
+                where_clause: WHERE ID IN (85,87,88,89,90)
+            -
+                name: CollectingTeams
+                table_name: collectionOne_collecting_team
+                where_clause: WHERE ID = 83
+            -
+                name: CollectingEvent
+                table_name: COLLECTING_EVENT_V
+                where_clause: WHERE FALSE
+

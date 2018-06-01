@@ -1,0 +1,117 @@
+{
+    "importer": {
+        "importer_code": "collectionOneItemRelationship",
+        "table_num": "57",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneCollectionItem",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneItemRelationship",
+    "importer_name": [
+        "CollectionOnearium Item Relationship Mapping"
+    ],
+    "table": "ca_objects",
+    "settings": {},
+    "groups": {
+        "_group_CANB_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:CANB",
+                    "destination": "ca_objects.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CA_IDNO_FROMITEMID_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CA_IDNO_FROMITEMID",
+                    "destination": "ca_objects.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "treatAsIdentifiersForMultipleRows": true
+                    }
+                }
+            ]
+        },
+        "_group_CA_IDNO_TOITEMID_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CA_IDNO_TOITEMID",
+                    "destination": "ca_objects",
+                    "settings": {
+                        "refineries": [
+                            "objectSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "objectSplitter_relationshipType": "imaged",
+                        "objectSplitter_objectType": "collectionOneCollectionItem",
+                        "objectSplitter_matchOn": [
+                            "idno"
+                        ],
+                        "objectSplitter_interstitial": {
+                            "fromItemID": "^FROMITEMID",
+                            "toItemID": "^TOITEMID",
+                            "typeOfItemRelationship": "^TYPEOFITEMRELATIONSHIP",
+                            "itemRelationshipRemarks": "^ITEMRELATIONSHIPREMARKS",
+                            "associationDescription": "^ASSOCIATIONDESCRIPTION",
+                            "createdBy": "^CREATEDBY",
+                            "createDate": "^CREATEDATE",
+                            "updatedBy": "^UPDATEBY",
+                            "updateDate": "^UPDATEDATE"
+                        },
+                        "objectSplitter_attributes": {
+                            "source_id": "CANB"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

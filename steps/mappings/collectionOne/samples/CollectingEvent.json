@@ -1,0 +1,310 @@
+{
+    "LEGACYID_CE": {
+        "name": "LEGACYID_CE",
+        "type": "int(7)",
+        "default": null,
+        "nullable": false,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [
+            728220,
+            855640,
+            208360,
+            180102,
+            208579,
+            868630,
+            868236,
+            518658,
+            632905,
+            393576,
+            455784,
+            553798,
+            821639,
+            858100,
+            710798,
+            714902,
+            811725,
+            802394,
+            810111,
+            818643,
+            855604,
+            867785,
+            871295,
+            885233,
+            898802,
+            937522,
+            937525,
+            937340,
+            99855,
+            116389,
+            45937,
+            71984,
+            87313,
+            889525,
+            890480,
+            898695,
+            899696,
+            933496,
+            929344
+        ],
+        "searchClauses": [
+            "LEGACYID_CE % 1000 = 0"
+        ]
+    },
+    "TOP_5_CU_NAMES": {
+        "name": "TOP_5_CU_NAMES",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "TOP_5_CU_NAMES IS NULL LIMIT 5"
+        ]
+    },
+    "PRIMARYNAME": {
+        "name": "PRIMARYNAME",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LOCALITY": {
+        "name": "LOCALITY",
+        "type": "varchar(600)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VERBATIMDATE": {
+        "name": "VERBATIMDATE",
+        "type": "varchar(173)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "HABITAT": {
+        "name": "HABITAT",
+        "type": "varchar(1500)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "TOPOGRAPHY": {
+        "name": "TOPOGRAPHY",
+        "type": "varchar(250)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ASPECT": {
+        "name": "ASPECT",
+        "type": "varchar(3)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "SLOPE": {
+        "name": "SLOPE",
+        "type": "int(2)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "GEOLOGICALSUBSTRATE": {
+        "name": "GEOLOGICALSUBSTRATE",
+        "type": "varchar(80)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "SOIL": {
+        "name": "SOIL",
+        "type": "varchar(80)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VEGETATION": {
+        "name": "VEGETATION",
+        "type": "varchar(2000)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ASSOCIATED_SPECIES": {
+        "name": "ASSOCIATED_SPECIES",
+        "type": "varchar(250)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LEGACYID_CTM": {
+        "name": "LEGACYID_CTM",
+        "type": "int(7)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "STARTDATE": {
+        "name": "STARTDATE",
+        "type": "varchar(85)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ENDDATE": {
+        "name": "ENDDATE",
+        "type": "varchar(85)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "FLORAOF": {
+        "name": "FLORAOF",
+        "type": "varchar(25)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "RECORDORIGIN": {
+        "name": "RECORDORIGIN",
+        "type": "varchar(150)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDDATE": {
+        "name": "UPDATEDDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

@@ -1,0 +1,759 @@
+parameters:
+    path.config: config
+    path.log: logs
+    commands:
+        - command.sql:execute
+        - command.pentaho:job
+        - command.mapping:download
+        - command.mapping:import
+        - command.mapping:bulk_import
+        - command.mapping:export
+        - command.import:run
+        - command.import:bulk_run
+        - command.import:bulk_all
+        - command.profile:export
+        - command.profile:install
+        - command.profile:install-ca
+        - command.collectionTwo:create
+        - command.collectionTwo:extract
+        - command.collectionTwo:report
+        - command.collectionTwo:collecting_event_view
+        - command.collectionTwo:collecting_team_view
+        - command.collectionTwo:collection_unit_view
+        - command.collectionTwo:collection_item_part_split_itemType
+        - command.collectionTwo:collection_item_part_split_preparationMethod
+        - command.collectionTwo:collection_item_part_split
+        - command.collectionTwo:collection_item_view
+        - command.collectionTwo:taxon_view
+        - command.collectionTwo:identification_view
+        - command.collectionTwo:location_view
+        - command.collectionTwo:refresh
+        - command.collectionTwo:all
+        - command.collectionTwo:transform
+        - command.collectionOne:collecting_event_view
+        - command.collectionOne:collection_unit_view
+        - command.collectionOne:collecting_team_view
+        - command.collectionOne:taxon_view
+        - command.collectionOne:identification_view
+        - command.collectionOne:collection_item_view
+        - command.collectionOne:collection_item_relationship_view
+        - command.collectionOne:linked_identifier_view
+        - command.collectionOne:item_identification_view
+        - command.collectionOne:create
+        - command.collectionOne:extract
+        - command.collectionOne:report
+        - command.collectionOne:transform
+        - command.collectionOne:refresh
+        - command.collectionOne:all
+        - command.all
+        - command.all:sample
+        - command.search:index
+        - command.search:reindex
+        - command.search:engine
+        - command.validate:all
+        - command.validate:source
+        - command.validate:destination
+        - command.validate:sample
+        - command.validate:migration
+        - command.util:default_sources
+        - command.demo:users
+        - command.demo:users-lock
+        - command.demo:users-unlock
+        - command.sql:backup
+        - command.schema:1
+        - command.schema:migrate
+
+services:
+    configLocator:
+        class: Symfony\Component\Config\FileLocator
+        arguments:
+            - '%path.config%'
+    configLoader:
+        class: CSIROCMS\Config\Loader\YamlFileLoader
+        autowire: true
+    configFactory:
+        class: CSIROCMS\Config\Factory\ConfigFactory
+        autowire: true
+    fileLogger:
+        class: Monolog\Handler\StreamHandler
+        arguments:
+            path: '%path.log%/app.log'
+    stdErrLogger:
+        class: Monolog\Handler\StreamHandler
+        arguments:
+            path: 'php://stderr'
+            level: info
+    logger:
+        class: Monolog\Logger
+        arguments:
+            name: app
+            handlers:  [ '@fileLogger', '@stdErrLogger' ]
+    command.sql:execute:
+        class: CSIROCMS\Command\SqlCommand
+        autowire: true
+    command.pentaho:job:
+        class: CSIROCMS\Command\PentahoJobCommand
+        autowire: true
+        arguments:
+            - '%path.base%'
+    command.collectionTwo:create:
+        class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+        autowire: true
+        arguments:
+            # name
+            - collectionTwo:create
+            # description
+            - Create CollectionTwo data schema.
+            # connection
+            - collectionTwointerim
+            # file
+            - steps/sql/mysql/collectionTwo/create_collectionTwo_data.sql
+    command.collectionTwo:extract:
+        class: CSIROCMS\Command\ConfiguredPentahoJobCommand
+        autowire: true
+        arguments:
+            # name
+            - collectionTwo:extract
+            # description
+            - Extract CollectionTwo data.
+            # file
+            - steps/pentaho/collectionTwo/copy/copy_collectionTwo_data.kjb
+            -
+                timeout: 0
+            -
+                databaseHostname: config.connections.collectionTwointerim.host
+                databasePassword: config.connections.collectionTwointerim.password
+                databaseSchema: config.connections.collectionTwointerim.database
+                databaseUser: config.connections.collectionTwointerim.username
+    command.collectionTwo:report:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:report
+                # description
+                - Create CollectionTwo data report.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/create_collectionTwo_datareport.sql
+    command.collectionTwo:collecting_event_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:collecting_event_view
+                # description
+                - Create collecting event view from which to pull data.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/collectionTwo_collecting_event_view.sql
+    command.collectionTwo:collecting_team_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:collecting_team_view
+                # description
+                - Create collecting team view from which to pull data.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/collectionTwo_collecting_team_view.sql
+    command.collectionTwo:location_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:location_view
+                # description
+                - Create location view from which to pull data.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/collectionTwo_location_view.sql
+    command.collectionTwo:collection_unit_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:collection_unit_view
+                # description
+                - Create collection unit view from which to pull data.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/collectionTwo_collection_unit_view.sql
+    command.collectionTwo:collection_item_part_split_itemType:
+                class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+                autowire: true
+                arguments:
+                  # name
+                  - collectionTwo:collection_item_part_split_itemType
+                  # description
+                  - Create collection item part view from which to pull data.
+                  # connection
+                  - collectionTwointerim
+                  # file
+                  - steps/sql/mysql/collectionTwo/create_collectionTwo_collection_item_part_split_itemType.sql
+    command.collectionTwo:collection_item_part_split_preparationMethod:
+                class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+                autowire: true
+                arguments:
+                  # name
+                  - collectionTwo:collection_item_part_split_preparationMethod
+                  # description
+                  - Create collection item part view from which to pull data.
+                  # connection
+                  - collectionTwointerim
+                  # file
+                  - steps/sql/mysql/collectionTwo/create_collectionTwo_collection_item_part_split_preparationMethod.sql
+    command.collectionTwo:collection_item_part_split:
+                class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+                autowire: true
+                arguments:
+                  # name
+                  - collectionTwo:collection_item_part_split
+                  # description
+                  - Create collection item part view from which to pull data.
+                  # connection
+                  - collectionTwointerim
+                  # file
+                  - steps/sql/mysql/collectionTwo/create_collectionTwo_collection_item_part_split.sql
+    command.collectionTwo:collection_item_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:collection_item_view
+                # description
+                - Create collection item view from which to pull data.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/collectionTwo_collection_item_view.sql
+    command.collectionTwo:taxon_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:taxon_view
+                # description
+                - Create taxon view from which to pull data.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/collectionTwo_taxon_view.sql
+    command.collectionTwo:identification_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionTwo:identification_view
+                # description
+                - Create identification view from which to pull data.
+                # connection
+                - collectionTwointerim
+                # file
+                - steps/sql/mysql/collectionTwo/collectionTwo_identification_view.sql
+    command.collectionOne:collecting_event_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:collecting_event_view
+                # description
+                - Create collecting event view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_collecting_event_view.sql
+    command.collectionOne:collection_unit_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:collection_unit_view
+                # description
+                - Create collection unit view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_collection_unit_view.sql
+    command.collectionOne:collecting_team_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:collecting_team_view
+                # description
+                - Create collecting team view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_collecting_team_view.sql
+    command.collectionOne:taxon_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:taxon_view
+                # description
+                - Create taxon view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_taxon_view.sql
+    command.collectionOne:identification_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:identification_view
+                # description
+                - Create identification view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_identification_view.sql
+    command.collectionOne:collection_item_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:collection_item_view
+                # description
+                - Create collection item view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_collection_item_view.sql
+    command.collectionOne:linked_identifier_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:linked_identifier_view
+                # description
+                - Create linked identifier view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_linked_identifier_view.sql
+    command.collectionOne:item_identification_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:item_identification_view
+                # description
+                - Create Item Identification view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_item_identification_view.sql
+                - steps/sql/mysql/collectionOne/collectionOne_linked_identifier_view.sql
+    command.collectionOne:collection_item_relationship_view:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:collection_item_relationship_view
+                # description
+                - Create collection item relationship view from which to pull data.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/collectionOne_item_relationship_view.sql
+    command.collectionOne:create:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:create
+                # description
+                - Create CollectionTwo data schema.
+                # connection
+                - collectionOneinterim
+                # file
+                - steps/sql/mysql/collectionOne/create_collectionOne_schema.sql
+    command.collectionOne:extract:
+            class: CSIROCMS\Command\ConfiguredPentahoJobCommand
+            autowire: true
+            arguments:
+                # name
+                - collectionOne:extract
+                # description
+                - Extract CollectionTwo data.
+                # file
+                - steps/pentaho/collectionOne/copy_collectionOne/copy_collectionOne_ibis_local_minimal.kjb
+                -
+                    timeout: 43200 # 12 hrs
+                -
+                    sourceHostname: config.connections.collectionOneibis.host
+                    sourcePassword: config.connections.collectionOneibis.password
+                    sourceSchema: config.connections.collectionOneibis.database
+                    sourceUser: config.connections.collectionOneibis.username
+                    targetHostname: config.connections.collectionOneinterim.host
+                    targetPassword: config.connections.collectionOneinterim.password
+                    targetSchema: config.connections.collectionOneinterim.database
+                    targetUser: config.connections.collectionOneinterim.username
+    command.collectionOne:report:
+                class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+                autowire: true
+                arguments:
+                    # name
+                    - collectionOne:report
+                    # description
+                    - Create CollectionTwo data report.
+                    # connection
+                    - collectionOneinterim
+                    # file
+                    - steps/sql/mysql/collectionOne/create_collectionOne_datareport.sql
+    command.collectionOne:transform:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - collectionOne:transform
+                    # description
+                    - Run all the CollectionTwo transformations
+                    # commands
+                    - [collectionOne:collecting_team_view, collectionOne:collecting_event_view, collectionOne:collection_unit_view, collectionOne:taxon_view, collectionOne:identification_view, collectionOne:collection_item_view, collectionOne:linked_identifier_view, collectionOne:linked_identifier_view, collectionOne:item_identification_view, collectionOne:collection_item_relationship_view]
+    command.collectionOne:refresh:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - collectionOne:refresh
+                    # description
+                    - Refresh data for the CollectionTwo migrations
+                    # commands
+                    -
+                        - collectionOne:create
+                        - collectionOne:extract
+                        - collectionOne:report
+                        - collectionOne:transform
+    command.collectionOne:all:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - collectionOne:all
+                    # description
+                    - Run all the CollectionTwo migrations
+                    # commands
+                    -
+                        - collectionOne:refresh
+                        - import:bulk_all:
+                            arguments:
+                                collection name: collectionOne
+                            options:
+                                run-offline: true
+                                ignore-errors: false
+    command.collectionTwo:transform:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - collectionTwo:transform
+                    # description
+                    - Run all the CollectionTwo transformations
+                    # commands
+                    - [collectionTwo:location_view, collectionTwo:collecting_event_view, collectionTwo:collection_unit_view, collectionTwo:collection_item_part_split_itemType, collectionTwo:collection_item_part_split_preparationMethod, collectionTwo:collection_item_part_split, collectionTwo:collection_item_part_split_itemType, collectionTwo:collection_item_part_split_preparationMethod, collectionTwo:collection_item_part_split, collectionTwo:collection_item_view, collectionTwo:collecting_team_view, collectionTwo:taxon_view, collectionTwo:identification_view]
+    command.collectionTwo:refresh:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - collectionTwo:refresh
+                    # description
+                    - Refresh data for the CollectionTwo migrations
+                    # commands
+                    -
+                        - collectionTwo:create
+                        - collectionTwo:extract
+                        - collectionTwo:report
+                        - collectionTwo:transform
+    command.collectionTwo:all:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - collectionTwo:all
+                    # description
+                    - Run all the CollectionTwo migrations
+                    # commands
+                    -
+                        - collectionTwo:refresh
+                        - import:bulk_all:
+                            arguments:
+                                collection name: collectionTwo
+                            options:
+                                run-offline: true
+                                ignore-errors: false
+    command.mapping:download:
+            class: CSIROCMS\Command\MappingDownloadCommand
+            autowire: true
+    command.mapping:import:
+            class: CSIROCMS\Command\MappingImportCommand
+            autowire: true
+    command.mapping:bulk_import:
+            class: CSIROCMS\Command\MappingBulkImportCommand
+            autowire: true
+    command.import:run:
+            class: CSIROCMS\Command\ImportRunCommand
+            autowire: true
+    command.import:bulk_run:
+            class: CSIROCMS\Command\ImportBulkRunCommand
+            autowire: true
+    command.import:bulk_all:
+            class: CSIROCMS\Command\ImportBulkAllCommand
+            autowire: true
+    command.profile:export:
+            class: CSIROCMS\Command\CaUtilsCommand
+            autowire: true
+            arguments:
+                - profile:export
+                - Exports the CollectiveAccess installation profile
+                - export-profile
+                -
+                    name: CSIRO NRCA
+                    infoURL: https://confluence.csiro.au/display/CMS/Collections+Management+Service
+                    description: Installation profile for CSIRO National Research Collections of Australia
+                    output: COLLECTIVEACCESS_HOME/install/profiles/xml/csiro-nrca.xml
+                -
+    command.profile:install-ca:
+            class: CSIROCMS\Command\CaUtilsCommand
+            autowire: true
+            arguments:
+                - profile:install-ca
+                - Installs the CollectiveAccess installation profile
+                - install
+                -
+                    profile-name: csiro-nrca
+                    admin-email: csironrca@csiro.au
+                    overwrite: true
+                -
+                    timeout:  0
+    command.profile:install:
+            class: CSIROCMS\Command\RunDependentTasksCommand
+            autowire: true
+            arguments:
+                # name
+                - profile:install
+                # description
+                - Install CollectiveAccess and run related tasks
+                # commands
+                -
+                    - profile:install-ca
+                    - schema:migrate
+    command.search:index:
+            class: CSIROCMS\Command\CaUtilsCommand
+            autowire: true
+            arguments:
+                - search:index
+                - Process the search indexing queue. Indexes records that have not yet been indexed.
+                - process-indexing-queue
+                - []
+                - timeout:  0
+    command.search:reindex:
+            class: CSIROCMS\Command\CaUtilsCommand
+            autowire: true
+            arguments:
+                - search:reindex
+                - Rebuild the search index entirely.
+                - rebuild-search-index
+                - []
+                - timeout:  0
+    command.search:engine:
+            class: CSIROCMS\Command\SearchEngineCommand
+            autowire: true
+    command.mapping:export:
+            class: CSIROCMS\Command\MappingExportCommand
+            autowire: true
+    command.all:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - all
+                    # description
+                    - Run ALL the migrations (kitchen sink)
+                    # commands
+                    -
+                        - sql:backup:
+                            arguments:
+                                file-prefix: pre-migration
+                            options:
+                                include-build-id: true
+                                zip: true
+                        - profile:install
+                        - search:engine:
+                            arguments:
+                                search-engine: SqlSearch
+                        - collectionTwo:all:
+                            options:
+                                ignore-errors: false
+                        - collectionOne:all:
+                            options:
+                                ignore-errors: false
+                        - search:engine:
+                            arguments:
+                                search-engine: ElasticSearch
+                        - search:reindex
+                        - sql:backup:
+                            arguments:
+                                file-prefix: post-migration
+                            options:
+                                include-build-id: true
+                                zip: true
+    command.all:sample:
+                class: CSIROCMS\Command\RunDependentTasksCommand
+                autowire: true
+                arguments:
+                    # name
+                    - all:sample
+                    # description
+                    - Import sample data for all migrations
+                    # commands
+                    -
+                        - collectionOne:refresh
+                        - collectionTwo:refresh
+                        - search:engine:
+                            arguments:
+                                search-engine: SqlSearch
+                        # TODO uncomment these as part of CMS-2501
+                        # - validate:source
+                        # - validate:destination
+                        # Load the mappings
+                        - validate:sample:
+                            options:
+                                no-regenerate : true
+                                no-import : true
+                        # Generate source sample data
+                        - validate:sample:
+                            options:
+                                data-dump : true
+                                no-import : true
+                        - sql:backup:
+                            arguments:
+                                file-prefix: pre-migration
+                            options:
+                                include-build-id: true
+                                zip: true
+                        - profile:install
+                        - demo:users
+                        # Import the data
+                        - validate:sample:
+                            options:
+                                no-regenerate : true
+                        - search:engine:
+                            arguments:
+                                search-engine: ElasticSearch
+                        - search:reindex
+                        - sql:backup:
+                            arguments:
+                                file-prefix: post-migration
+                            options:
+                                include-build-id: true
+                                zip: true
+    command.validate:source:
+            class: CSIROCMS\Command\ValidateSourceCommand
+            autowire: true
+    command.validate:destination:
+            class: CSIROCMS\Command\ValidateDestinationCommand
+            autowire: true
+    command.validate:sample:
+            class: CSIROCMS\Command\ValidateSampleCommand
+            autowire: true
+    command.validate:migration:
+            class: CSIROCMS\Command\ValidateMigrationCommand
+            autowire: true
+    command.validate:all:
+            class: CSIROCMS\Command\RunDependentTasksCommand
+            autowire: true
+            arguments:
+                # name
+                - validate:all
+                # description
+                - Run all the validation commands
+                # commands
+                - [validate:source, validate:destination, validate:sample]
+    command.demo:users:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - demo:users
+                # description
+                - Create demo users for all the configured roles in the system.
+                 Users will have a user name matching the role name.
+                # connection
+                - collectiveaccess
+                # file
+                - steps/sql/mysql/create_demo_users_for_roles.sql
+    command.demo:users-lock:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - demo:users-lock
+                # description
+                - Locks demo user accounts by invalidating their passwords.
+                 These passwords can subsequently be set either through the UI or the caUtils command.
+                # connection
+                - collectiveaccess
+                # file
+                - steps/sql/mysql/lock_demo_users.sql
+    command.demo:users-unlock:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - demo:users-unlock
+                # description
+                - 💀💀💀 Unlocks demo user accounts by setting their password to 'password'.💀💀💀
+                 WARNING - insecure and should only be run on development machines.
+                # connection
+                - collectiveaccess
+                # file
+                - steps/sql/mysql/unlock_demo_users.sql
+    command.util:default_sources:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - util:default_sources
+                # description
+                - Associates CollectiveAccess records with sources based on their record type.
+                # connection
+                - collectiveaccess
+                # file
+                - steps/sql/mysql/add_default_sources_for_types.sql
+    command.sql:backup:
+            class: CSIROCMS\Command\BackupCommand
+            autowire: true
+    command.schema:1:
+            class: CSIROCMS\Command\ConfiguredSqlExecuteCommand
+            autowire: true
+            arguments:
+                # name
+                - schema:1
+                # description
+                - Support IP v6 addresses in log tables.
+                # connection
+                - collectiveaccess
+                # file
+                - steps/sql/mysql/ip_v6_address_support.sql
+    command.schema:migrate:
+            class: CSIROCMS\Command\RunDependentTasksCommand
+            autowire: true
+            arguments:
+                # name
+                - schema:migrate
+                # description
+                - Run updates to the CA databse schema
+                # commands
+                - [schema:1]

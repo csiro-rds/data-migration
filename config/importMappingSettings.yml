@@ -1,0 +1,69 @@
+parameters:
+    collectionTwo:
+        connection: collectionTwointerim
+        other_import_params: -d DEBUG -l logs/ --direct --no-search-indexing
+        mappings:
+            -
+                name: CollectingEvent
+                table_name: collectionTwo_collecting_event
+            -
+                name: Places
+                table_name: collectionTwo_location
+            -
+                name: CollectingTeam
+                table_name: collectionTwoCollectingTeam
+            -
+                name: CollectionUnit
+                table_name: collectionTwoCollectionUnit
+            -
+                name: Taxon
+                table_name: collectionTwoTaxon
+            -
+                name: Identification
+                table_name: collectionTwoIdentification
+            -
+                name: CollectionItem
+                table_name: collectionTwoCollectionItem
+            -
+                name: ItemPart
+                table_name: collectionTwoItemPartSplit
+    collectionOne:
+        connection: collectionOneinterim
+        other_import_params: -d DEBUG -l logs/ --direct --no-search-indexing
+        mappings:
+            -
+                name: Places
+                table_name: CMS_LOCATION_V
+            -
+                name: Collectors
+                table_name: CMS_COLLECTOR_V
+            -
+                name: CollectingTeams
+                table_name: CMS_COLLECTING_TEAM_W_MEMBERS_V
+            -
+                name: CollectingEvent
+                table_name: CMS_COLLECTING_EVENT_W_CU_NAMES_V
+            -
+                name: CollectionUnit
+                table_name: CMS_COLLECTION_UNIT_W_COLLECTORS_V
+            -
+                name: Taxon
+                table_name: cms_taxon_view
+            -
+                name: Identification
+                table_name: cms_identification_view
+            -
+                name: CollectionItem
+                table_name: CMS_COLLECTION_ITEM_W_LABEL_V
+            -
+                name: ItemRelationship
+                table_name: CMS_ITEM_RELATIONSHIP_W_ITEM_IDNO_V
+            -
+                name: ItemPart
+                table_name: CMS_ITEM_PART_V
+            -
+                name: LinkedIdentifier
+                table_name: CMS_LINKED_IDENTIFIER_W_ID_NO_V
+            -
+                name: ItemIdentification
+                table_name: CMS_ITEM_IDENTIFICATION_W_CU_AND_ITEM_IDNO_V

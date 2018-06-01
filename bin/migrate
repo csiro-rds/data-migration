@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+$basePath = dirname(__DIR__);
+require $basePath . '/vendor/autoload.php';
+
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Console\Application;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+
+$container = new ContainerBuilder();
+$container->setParameter('path.base', $basePath);
+$loader = new YamlFileLoader($container, new FileLocator($basePath . '/config'));
+$loader->load('dependencies.yml');
+$container->compile();
+
+$application = new Application(basename(__FILE__), json_decode(file_get_contents($basePath . '/composer.json'))->version);
+foreach ($container->getParameter('commands') as $command){
+	$application->add($container->get($command));
+}
+
+$application->run();

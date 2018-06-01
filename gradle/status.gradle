@@ -1,0 +1,49 @@
+/*
+ * Scripts for checking the status of the application deployed to a server.
+ *
+ * NB: This script is conditionally applied. Any new tasks will need to be
+ * included in the conditions in build.gradle.
+ *
+ * Usage: gradle status
+ */
+assert project.hasProperty('remoteHost'), 'The remote host for the deployment must be specified.'
+assert project.hasProperty('appUser'), 'The application user for the deployment environment'
+assert project.hasProperty('targetEnv'), 'The deployment environment needs to be set'
+
+// Ssh settings
+ssh {
+  knownHosts = allowAnyHosts    // Disable host key verification
+  pty = true    // Fixes "sudo: no tty present and no askpass program specified"
+}
+
+// Define the remote server we are interacting with.
+remotes {
+    targetServer {
+        host = remoteHost
+        user = deployuser
+        password = deploypassword
+    }
+}
+
+def remoteDir = '/srv/cms/deployment/data-migration'
+
+task status(type: SshTask) {
+    description 'Check the deployment of the application to the server. Intended for use by the Jenkins deploy job only.'
+    group 'Continuous Delivery'
+
+    // Note: Each sudo command here must be specifically allowed in the remote host sudoers config.
+    session(remotes.targetServer) {
+
+        // Check data migration executable
+        println("if [ ! -f \"${remoteDir}/bin/migrate\" ]; then exit 1; fi")
+        execute("if [ ! -f \"${remoteDir}/bin/migrate\" ]; then exit 1; fi")
+
+		// Check vendor directory exists
+        println("if [ ! -d \"${remoteDir}/vendor\" ]; then exit 1; fi")
+        execute("if [ ! -d \"${remoteDir}/vendor\" ]; then exit 1; fi")
+
+		// Check configuration file exists
+        println("if [ ! -f \"${remoteDir}/config/local.yml\" ]; then exit 1; fi")
+        execute("if [ ! -f \"${remoteDir}/config/local.yml\" ]; then exit 1; fi")
+    }
+}

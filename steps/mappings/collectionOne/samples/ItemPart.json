@@ -1,0 +1,76 @@
+{
+    "LEGACYID_CI": {
+        "name": "LEGACYID_CI",
+        "type": "int(8)",
+        "default": null,
+        "nullable": false,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "LEGACYID_CI IN (SELECT DISTINCT LEGACYID_CI FROM _test_collectionOne_CollectionItem)"
+        ]
+    },
+    "PARTTYPE": {
+        "name": "PARTTYPE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

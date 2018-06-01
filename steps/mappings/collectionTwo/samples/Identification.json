@@ -1,0 +1,232 @@
+{
+    "intMaterialID": {
+        "name": "intMaterialID",
+        "type": "int(11)",
+        "default": "0",
+        "nullable": false,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "intMaterialID IN (SELECT DISTINCT intMaterialID FROM _test_collectionTwo_CollectionUnit)"
+        ]
+    },
+    "vchrEpithet": {
+        "name": "vchrEpithet",
+        "type": "varchar(200)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intBiotaID": {
+        "name": "intBiotaID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [
+            "intMaterialID IN (SELECT MIN(intMaterialID) FROM collectionTwoIdentification GROUP BY intBiotaID)"
+        ]
+    },
+    "vchrIDBy": {
+        "name": "vchrIDBy",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "dtIDDate": {
+        "name": "dtIDDate",
+        "type": "varchar(10)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "intIDRefID": {
+        "name": "intIDRefID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDMethod": {
+        "name": "vchrIDMethod",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "identificationMethod": {
+        "name": "identificationMethod",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDAccuracy": {
+        "name": "vchrIDAccuracy",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDNameQual": {
+        "name": "vchrIDNameQual",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDNotes": {
+        "name": "vchrIDNotes",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrIDRefPage": {
+        "name": "vchrIDRefPage",
+        "type": "varchar(100)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrRefCode": {
+        "name": "vchrRefCode",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "internalNote": {
+        "name": "internalNote",
+        "type": "mediumtext",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "identificationReferences": {
+        "name": "identificationReferences",
+        "type": "mediumtext",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "dtDateCreated": {
+        "name": "dtDateCreated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrWhoCreated": {
+        "name": "vchrWhoCreated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "dtDateLastUpdated": {
+        "name": "dtDateLastUpdated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "vchrWhoLastUpdated": {
+        "name": "vchrWhoLastUpdated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

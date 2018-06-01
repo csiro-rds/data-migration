@@ -1,0 +1,314 @@
+{
+    "ACCESSIONDATE": {
+        "name": "ACCESSIONDATE",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ACCESSIONNO": {
+        "name": "ACCESSIONNO",
+        "type": "varchar(15)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ACCESSREASON": {
+        "name": "ACCESSREASON",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ACCESSSTATUS": {
+        "name": "ACCESSSTATUS",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "BASISOFRECORD": {
+        "name": "BASISOFRECORD",
+        "type": "char(17)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CONDITION": {
+        "name": "CONDITION",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COUNT": {
+        "name": "COUNT",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COUNTQUALIFIER": {
+        "name": "COUNTQUALIFIER",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CURRENTSTATUS": {
+        "name": "CURRENTSTATUS",
+        "type": "char(1)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CURRENTSTATUSQUALIFIER": {
+        "name": "CURRENTSTATUSQUALIFIER",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DCTERMSTYPE": {
+        "name": "DCTERMSTYPE",
+        "type": "varchar(14)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DEACCESSIONDATE": {
+        "name": "DEACCESSIONDATE",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "INTERNALCATALOGNUMBER": {
+        "name": "INTERNALCATALOGNUMBER",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "INTERNALNOTE": {
+        "name": "INTERNALNOTE",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ITEMREMARKS": {
+        "name": "ITEMREMARKS",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ITEMTYPE": {
+        "name": "ITEMTYPE",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LABELCOLLECTIONCODE": {
+        "name": "LABELCOLLECTIONCODE",
+        "type": "varchar(10)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LEGACYID_CI": {
+        "name": "LEGACYID_CI",
+        "type": "int(8)",
+        "default": null,
+        "nullable": false,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LEGACYID_CU": {
+        "name": "LEGACYID_CU",
+        "type": "int(7)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": [
+            "LEGACYID_CU IN (SELECT DISTINCT LEGACYID_CU FROM _test_collectionOne_CollectionUnit)"
+        ]
+    },
+    "LIFEFORM": {
+        "name": "LIFEFORM",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LIFESTAGE": {
+        "name": "LIFESTAGE",
+        "type": "char(8)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ORIGINOFRECORD": {
+        "name": "ORIGINOFRECORD",
+        "type": "varchar(140)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "RECORDSTATUS": {
+        "name": "RECORDSTATUS",
+        "type": "char(9)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "SEX": {
+        "name": "SEX",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "SUFFIX": {
+        "name": "SUFFIX",
+        "type": "int(3)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CA_IDNO": {
+        "name": "CA_IDNO",
+        "type": "varchar(38)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "EXCHANGEUNITID": {
+        "name": "EXCHANGEUNITID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

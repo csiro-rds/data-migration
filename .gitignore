@@ -1,0 +1,38 @@
+composer.phar
+vendor/
+logs/*
+!logs/.gitkeep
+data/
+!data/.gitkeep
+build/
+.gradle/
+
+
+# ide files #
+#############
+.project
+.settings
+.buildpath
+.idea
+
+# linux #
+#########
+*~
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+config/local.yml
+config/client_id.json
+config/rest-client.env.json
+
+# Other #
+#########
+reload.sh

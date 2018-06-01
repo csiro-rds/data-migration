@@ -1,0 +1,59 @@
+###
+OPTIONS  http://{{user}}:{{password}}@{{host}}{{path}}service.php/browse/ca_objects
+
+###
+POST http://{{user}}:{{password}}@{{host}}{{path}}service.php/browse/ca_objects?pretty=1&lang=en_AU&nocache=1
+Content-Type: application/json
+
+{
+	"criteria": {
+		"type_facet": [
+			"32"
+		]
+	},
+	"bundles": {
+		"ca_list_items.status": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.type_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_lists.list_code": {},
+		"ca_list_items.source_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_objects_x_vocabulary_terms.type_id": {"convertCodesToDisplayText": true, "returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.legacyId": {"returnAsArray": true},
+		"ca_list_items": {"returnAsArray": true},
+		"ca_objects.idno": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.verbatimDateIdentified": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.dateIdentified": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.currentDetFlag": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.identifiedBy": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.tagName": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.authorisedBy": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.identificationReferences": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.identificationRemarks": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.internalNote": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.identifierRole": {"returnAsArray": true, "convertCodesToDisplayText": true},
+		"ca_objects_x_vocabulary_terms.identificationQualifier": {"returnAsArray": true, "convertCodesToDisplayText": true},
+		"ca_objects_x_vocabulary_terms.nameAddendum": {
+		    "convertCodesToDisplayText": true,
+		    "returnAsArray": true
+		},
+		"ca_objects_x_vocabulary_terms.identificationMethod": {"returnAsArray": true, "convertCodesToDisplayText": true},
+		"ca_objects_x_vocabulary_terms.referencePage": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.identificationReferenceCode": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.identificationVerificationStat": {"returnAsArray": true, "convertCodesToDisplayText": true},
+		"ca_objects_x_vocabulary_terms.rank": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.identificationSequence": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.createdBy": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.createDate": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.updatedBy": {"returnAsArray": true},
+		"ca_objects_x_vocabulary_terms.updateDate": {"returnAsArray": true}
+	}
+}
+
+###
+
+

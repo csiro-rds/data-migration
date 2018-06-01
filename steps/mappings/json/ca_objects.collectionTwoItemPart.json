@@ -1,0 +1,364 @@
+{
+    "importer": {
+        "importer_code": "collectionTwoItemPart",
+        "table_num": "57",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionTwoItemPart",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "overwrite_on_idno",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionTwoItemPart",
+    "importer_name": [
+        "CollectionTwomology Item Part Mapping"
+    ],
+    "table": "ca_objects",
+    "settings": {},
+    "groups": {
+        "_group_CollectionTwo_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:CollectionTwo",
+                    "destination": "ca_objects.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_MaterialPartID_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "MaterialPartID",
+                    "destination": "ca_objects.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "formatWithTemplate": "collectionTwoPart-^newMaterialId-^accessionSuffix-^MaterialPartID"
+                    }
+                }
+            ]
+        },
+        "_group_intMaterialID_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intMaterialID",
+                    "destination": "ca_objects.parent_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "skipRowIfValue": "0",
+                        "formatWithTemplate": "^vchrAccessionNo.^accessionSuffix",
+                        "prefix": "collectionTwoItem-"
+                    }
+                }
+            ]
+        },
+        "_group_PartPartName_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartPartName",
+                    "destination": "ca_objects.preferred_labels.name",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "default": "[BLANK]"
+                    }
+                }
+            ]
+        },
+        "_group_intMaterialID_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intMaterialID",
+                    "destination": "ca_objects.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionTwoMaterialId-"
+                    }
+                }
+            ]
+        },
+        "_group_MaterialPartID_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "MaterialPartID",
+                    "destination": "ca_objects.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionTwoM]aterialPart-"
+                    }
+                }
+            ]
+        },
+        "_group_PartGUID_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartGUID",
+                    "destination": "ca_objects.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "guid-"
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartCondition",
+                    "destination": "ca_objects.condition",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "condition"
+                    }
+                }
+            ]
+        },
+        "count": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartNoSpecimens",
+                    "destination": "ca_objects.count",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "countQualifier": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartNoSpecimensQual",
+                    "destination": "ca_objects.countQualifier",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "sex": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartGender",
+                    "destination": "ca_objects.sex",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "sex"
+                    }
+                }
+            ]
+        },
+        "lifeStage": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartLifestage",
+                    "destination": "ca_objects.lifeStage",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "lifeStage",
+                        "listItemSplitter_delimiter": ","
+                    }
+                }
+            ]
+        },
+        "internalNote": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PartNotes",
+                    "destination": "ca_objects.internalNote",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_preparationType_24": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "preparationType",
+                    "destination": "ca_objects.preparationType",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "preparationType"
+                    }
+                }
+            ]
+        }
+    }
+}

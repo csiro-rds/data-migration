@@ -1,0 +1,935 @@
+{
+    "importer": {
+        "importer_code": "collectionTwoPlaces",
+        "table_num": "72",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionTwoLocation",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionTwoPlaces",
+    "importer_name": [
+        "CollectionTwomology Places and Political Regions Mapping"
+    ],
+    "table": "ca_places",
+    "settings": {},
+    "groups": {
+        "_group_intSiteID_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intSiteID",
+                    "destination": "ca_places.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionTwo-"
+                    }
+                }
+            ]
+        },
+        "_group_CollectionTwo_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:15:CollectionTwo",
+                    "destination": "ca_places.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrSiteName_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrSiteName",
+                    "destination": "ca_places.preferred_labels.name",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_dwc_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:17:dwc",
+                    "destination": "ca_places.hierarchy_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrLocal_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrLocal",
+                    "destination": "ca_places.verbatimLocality",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrParentCountry_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrParentCountry",
+                    "destination": "ca_places.country",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_intPoliticalRegionID_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "intPoliticalRegionID",
+                    "destination": "ca_places.parent_id",
+                    "settings": {
+                        "refineries": [
+                            "placeHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "placeHierarchyBuilder_parents": [
+                            {
+                                "idno": "collectionTwoHier-^r1ID",
+                                "name": "^r1Name",
+                                "type": "^r1Rank",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CollectionTwo"
+                                }
+                            },
+                            {
+                                "idno": "collectionTwoHier-^r2ID",
+                                "name": "^r2Name",
+                                "type": "^r2Rank",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CollectionTwo"
+                                },
+                                "rules": [
+                                    {
+                                        "trigger": "^r2Name =~ \/^$\/",
+                                        "actions": [
+                                            {
+                                                "action": "SKIP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "idno": "collectionTwoHier-^r3ID",
+                                "name": "^r3Name",
+                                "type": "^r3Rank",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CollectionTwo"
+                                },
+                                "rules": [
+                                    {
+                                        "trigger": "^r3Name =~ \/^$\/",
+                                        "actions": [
+                                            {
+                                                "action": "SKIP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "idno": "collectionTwoHier-^r4ID",
+                                "name": "^r4Name",
+                                "type": "^r4Rank",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CollectionTwo"
+                                },
+                                "rules": [
+                                    {
+                                        "trigger": "^r4Name =~ \/^$\/",
+                                        "actions": [
+                                            {
+                                                "action": "SKIP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "idno": "collectionTwoHier-^r5ID",
+                                "name": "^r5Name",
+                                "type": "^r5Rank",
+                                "attributes": {
+                                    "ca_places.hierarchy_id": "dwc",
+                                    "ca_places.source_id": "CollectionTwo"
+                                },
+                                "rules": [
+                                    {
+                                        "trigger": "^r5Name =~ \/^$\/",
+                                        "actions": [
+                                            {
+                                                "action": "SKIP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_fltPosY1_18": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "fltPosY1",
+                    "destination": "ca_places.verbatimLatitude",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "formatWithTemplate": "^fltPosY1 - ^fltPosY2",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "(^0? - 0?$)?(^0? -)?(- 0?$)",
+                                "replaceWith": ""
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_fltPosX1_19": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "fltPosX1",
+                    "destination": "ca_places.verbatimLongitude",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "formatWithTemplate": "^fltPosX1 - ^fltPosX2",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "(^0? - 0?$)?(^0? -)?(- 0?$)",
+                                "replaceWith": ""
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_fltPosX1_20": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "fltPosX1",
+                    "destination": "ca_places.georeference",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "formatWithTemplate": "^fltPosY1,^fltPosX1",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "(-?\\d+\\.?\\d*,-?\\d+\\.?\\d*)",
+                                "replaceWith": "[\\1]"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrDistanceFromPlace_21": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrDistanceFromPlace",
+                    "destination": "ca_places.distanceFromPlace",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrDirFromPlace_22": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrDirFromPlace",
+                    "destination": "ca_places.directionFromPlace",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrInformalLocal_23": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrInformalLocal",
+                    "destination": "ca_places.description",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_tintPosCoordinates_24": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "tintPosCoordinates",
+                    "destination": "ca_places.positionCoordinateType",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "positionCoordinateType"
+                    }
+                }
+            ]
+        },
+        "_group_tintPosAreaType_25": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "tintPosAreaType",
+                    "destination": "ca_places.positionAreaType",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "positionAreaType"
+                    }
+                }
+            ]
+        },
+        "_group_vchrPosError_26": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrPosError",
+                    "destination": "ca_places.coordinateUncertainty",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "applyRegularExpressions": [
+                            {
+                                "match": ">?\\b([0-9]+)\\s*(km|k|[^k]m)\\b",
+                                "replaceWith": "\\1\\2"
+                            },
+                            {
+                                "match": ">?(\\d+)\\s*$",
+                                "replaceWith": "\\1 km"
+                            },
+                            {
+                                "match": "^km$",
+                                "replaceWith": ""
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrPosUTMMapProj_27": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrPosUTMMapProj",
+                    "destination": "ca_places.verbatimCoordinates",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "formatWithTemplate": "^vchrPosUTMMapProj: ^vchrUTMMapName ^vchrPosUTMMapVer"
+                    }
+                }
+            ]
+        },
+        "_group_vchrPosUTMSource_28": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrPosUTMSource",
+                    "destination": "ca_places.verbatimSRS",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrPosWho_29": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrPosWho",
+                    "destination": "ca_places.georeferencedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrPosSource_30": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrPosSource",
+                    "destination": "ca_places.georeferenceSource",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "georeferenceProtocol"
+                    }
+                }
+            ]
+        },
+        "_group_vchrPosDate_31": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrPosDate",
+                    "destination": "ca_places.georeferencedDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_nearestNamedPlace_32": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "nearestNamedPlace",
+                    "destination": "ca_places.nearestNamedPlace",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "delimiter": "|"
+                    }
+                }
+            ]
+        },
+        "_group_vchrGeoNotes_33": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrGeoNotes",
+                    "destination": "ca_places.georeferenceRemarks",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_fltElevLower_34": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "fltElevLower",
+                    "destination": "ca_places.minimumElevation",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^fltElevLower^vchrElevUnits",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "([0-9]*[\\.]{0,1}[0-9]*)(m|ft|metres|meters|feet|f)",
+                                "replaceWith": "\\1\\2"
+                            },
+                            {
+                                "match": "(^[0-9]*[\\.]{0,1}+[0-9]*$)",
+                                "replaceWith": "\\1m"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_fltElevUpper_35": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "fltElevUpper",
+                    "destination": "ca_places.maximumElevation",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^fltElevUpper^vchrElevUnits",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "([0-9]*[\\.]{0,1}[0-9]*)(m|ft|metres|meters|feet|f)",
+                                "replaceWith": "\\1\\2"
+                            },
+                            {
+                                "match": "(^[0-9]*[\\.]{0,1}+[0-9]*$)",
+                                "replaceWith": "\\1m"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrElevError_36": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrElevError",
+                    "destination": "ca_places.elevationUncertainty",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "formatWithTemplate": "^fltElevError",
+                        "applyRegularExpressions": [
+                            {
+                                "match": "([0-9]*[\\.]{0,1}[0-9]*)[\\s,]*(m|ft|metres|meters|feet|f)",
+                                "replaceWith": "\\1\\2"
+                            },
+                            {
+                                "match": "(^[0-9]+[\\.]{0,1}[0-9]*$)",
+                                "replaceWith": "\\1m"
+                            },
+                            {
+                                "match": "(^[a-zA-Z\\.\\~\\<\\>]*$)",
+                                "replaceWith": ""
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_vchrElevSource_37": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "vchrElevSource",
+                    "destination": "ca_places.elevationAccordingTo",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_fltElevDepth_38": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "fltElevDepth",
+                    "destination": "ca_places.minimumDepth",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_collectionTwoTraitOther_39": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "collectionTwoTraitOther",
+                    "destination": "ca_places.collectionTwoTraitOther",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "delimiter": "|"
+                    }
+                }
+            ]
+        },
+        "_group_sitedtDateCreated_40": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "sitedtDateCreated",
+                    "destination": "ca_places.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_sitevchrWhoCreated_41": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "sitevchrWhoCreated",
+                    "destination": "ca_places.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_sitedtDateLastUpdated_42": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "sitedtDateLastUpdated",
+                    "destination": "ca_paces.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_sitevchrWhoLastUpdated_43": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "sitevchrWhoLastUpdated",
+                    "destination": "ca_places.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        }
+    }
+}

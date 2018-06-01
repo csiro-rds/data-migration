@@ -1,0 +1,184 @@
+{
+    "importer": {
+        "importer_code": "collectionOneCollectingTeams",
+        "table_num": "20",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneCollectingTeam",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneCollectingTeams",
+    "importer_name": [
+        "CollectionOnearium Collecting Teams Mapping"
+    ],
+    "table": "ca_entities",
+    "settings": {},
+    "groups": {
+        "_group_CollectionTwo_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:CollectionTwo",
+                    "destination": "ca_entities.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_CTM_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_CTM",
+                    "destination": "ca_entities.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOne-"
+                    }
+                }
+            ]
+        },
+        "_group_PRIMARYNAME_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "PRIMARYNAME",
+                    "destination": "ca_entities.preferred_labels",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_OTHERNAME_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "OTHERNAME",
+                    "destination": "ca_entities.nonpreferred_labels",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_primaryMembers_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "primaryMembers",
+                    "destination": "ca_entities",
+                    "settings": {
+                        "refineries": [
+                            "entitySplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "entitySplitter_entityType": "collectionOneCollector",
+                        "entitySplitter_relationshipType": "memberPrimary",
+                        "entitySplitter_matchOn": [
+                            "idno"
+                        ],
+                        "entitySplitter_doNotParse": 1,
+                        "entitySplitter_dontCreate": 1,
+                        "entitySplitter_delimiter": ","
+                    }
+                }
+            ]
+        },
+        "_group_otherMembers_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "otherMembers",
+                    "destination": "ca_entities",
+                    "settings": {
+                        "refineries": [
+                            "entitySplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "entitySplitter_entityType": "collectionOneCollector",
+                        "entitySplitter_relationshipType": "memberOther",
+                        "entitySplitter_matchOn": [
+                            "idno"
+                        ],
+                        "entitySplitter_doNotParse": 1,
+                        "entitySplitter_dontCreate": 1,
+                        "entitySplitter_delimiter": ","
+                    }
+                }
+            ]
+        }
+    }
+}

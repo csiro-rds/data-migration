@@ -1,0 +1,875 @@
+{
+    "importer": {
+        "importer_code": "collectionOneTaxon",
+        "table_num": "33",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneTaxon",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneTaxon",
+    "importer_name": [
+        "CollectionOnearium Taxon Mapping"
+    ],
+    "table": "ca_list_items",
+    "settings": {},
+    "groups": {
+        "_group_taxonomy_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:taxonomy",
+                    "destination": "ca_list_items.list_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_TAXON_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_TAXON",
+                    "destination": "ca_list_items.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOne-",
+                        "skipIfValue": "0"
+                    }
+                }
+            ]
+        },
+        "preferred_labels": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "SCIENTIFICNAME",
+                    "destination": "ca_list_items.preferred_labels.name_singular",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                },
+                {
+                    "source": "SCIENTIFICNAME",
+                    "destination": "ca_list_items.preferred_labels.name_plural",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CANB_15": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:18:CANB",
+                    "destination": "ca_list_items.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_TAXON_16": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_TAXON",
+                    "destination": "ca_list_items.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOne-taxon-",
+                        "skipIfEmpty": 1,
+                        "skipIfValue": "0"
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_PT_17": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_PT",
+                    "destination": "ca_list_items.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOne-pt-",
+                        "skipIfEmpty": 1,
+                        "skipIfValue": "0"
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_PT_18": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_PT",
+                    "destination": "ca_list_items.parent_id",
+                    "settings": {
+                        "refineries": [
+                            "listItemHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "skipIfValue": [
+                            "0"
+                        ],
+                        "listItemHierarchyBuilder_parents": [
+                            {
+                                "idno": "collectionOne-^LEGACYID_PT",
+                                "name": "^P_SCIENTIFICNAME",
+                                "ignoreParent": true,
+                                "matchOn": [
+                                    "idno"
+                                ],
+                                "type": "collectionOneTaxon",
+                                "attributes": {
+                                    "ca_list_items.source_id": "CANB",
+                                    "ca_list_items.is_enabled": true
+                                }
+                            }
+                        ],
+                        "listItemHierarchyBuilder_list": "taxonomy"
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_PT2_19": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_PT2",
+                    "destination": "ca_list_items.parent2Taxon",
+                    "settings": {
+                        "refineries": [
+                            "listItemHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemHierarchyBuilder_parents": [
+                            {
+                                "idno": "collectionOne-^LEGACYID_PT2",
+                                "name": "^P_SCIENTIFICNAME",
+                                "ignoreParent": true,
+                                "matchOn": [
+                                    "idno"
+                                ],
+                                "type": "collectionOneTaxon",
+                                "attributes": {
+                                    "ca_list_items.is_enabled": true
+                                }
+                            }
+                        ],
+                        "listItemHierarchyBuilder_list": "taxonomy"
+                    }
+                }
+            ]
+        },
+        "_group_SCIENTIFICNAME_20": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "SCIENTIFICNAME",
+                    "destination": "ca_list_items.scientificName",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_SIMPLENAME_21": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "SIMPLENAME",
+                    "destination": "ca_list_items.simpleName",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_SCIENTIFICNAMEAUTHORSHIP_22": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "SCIENTIFICNAMEAUTHORSHIP",
+                    "destination": "ca_list_items.scientificNameAuthorship",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_NAMEPUBLISHEDINYEAR_23": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "NAMEPUBLISHEDINYEAR",
+                    "destination": "ca_list_items.namePublishedInYear",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_LEGACYID_RANK_24": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_RANK",
+                    "destination": "ca_list_items.taxonRank",
+                    "settings": {
+                        "refineries": [
+                            "listItemHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemHierarchyBuilder_list": "taxonRank",
+                        "listItemHierarchyBuilder_parents": [
+                            {
+                                "type": "collectionOneTaxonRank",
+                                "ignoreParent": 1,
+                                "name": "^TAXONRANK",
+                                "idno": "collectionOne-^TAXONRANKCODE",
+                                "matchOn": [
+                                    "idno"
+                                ],
+                                "attributes": {
+                                    "ca_list_items.is_enabled": true,
+                                    "ca_list_items.nomenclaturalCode": "^NOMENCLATURALCODE",
+                                    "ca_list_items.rank": "^TAXONRANKORDER",
+                                    "ca_list_items.createdBy": "^TR_CREATEDBY",
+                                    "ca_list_items.createDate": "^TR_CREATEDATE",
+                                    "ca_list_items.updatedBy": "^TR_UPDATEDBY",
+                                    "ca_list_items.updateDate": "^TR_UPDATEDATE"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_VERNACULARNAME_25": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "VERNACULARNAME",
+                    "destination": "ca_list_items.vernacularName",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CULTIVARREGISTRATIONTYPE_26": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CULTIVARREGISTRATIONTYPE",
+                    "destination": "ca_list_items.cultivarRegistrationType",
+                    "settings": {
+                        "refineries": [
+                            "listItemHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemHierarchyBuilder_list": "cultivarRegistrationType",
+                        "listItemHierarchyBuilder_parents": [
+                            {
+                                "type": "concept",
+                                "ignoreParent": 1,
+                                "name": "^CULTIVARREGISTRATIONTYPE",
+                                "idno": "collectionOne-^CULTIVARREGISTRATIONTYPE",
+                                "matchOn": [
+                                    "idno"
+                                ],
+                                "attributes": {
+                                    "ca_list_items.is_enabled": true
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CULTIVARGROUPNAME_27": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CULTIVARGROUPNAME",
+                    "destination": "ca_list_items.cultivarGroupName",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CULTIVARNAME_28": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CULTIVARNAME",
+                    "destination": "ca_list_items.cultivarName",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_TRADEDESIGNATION_29": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "TRADEDESIGNATION",
+                    "destination": "ca_list_items.tradeDesignation",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_HYBRIDFLAG_30": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "HYBRIDFLAG",
+                    "destination": "ca_list_items.hybridFlag",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            "\u00d7",
+                            "+"
+                        ],
+                        "replacement_values": [
+                            "hybrid",
+                            "graft"
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_TAXONOMICSTATUS_31": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "TAXONOMICSTATUS",
+                    "destination": "ca_list_items.taxonomicStatus",
+                    "settings": {
+                        "refineries": [
+                            "listItemHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemHierarchyBuilder_list": "taxonomic_status_types",
+                        "listItemHierarchyBuilder_parents": [
+                            {
+                                "type": "concept",
+                                "idno": "^TAXONOMICSTATUS",
+                                "name": "^TAXONOMICSTATUS",
+                                "ignoreParent": true,
+                                "matchOn": [
+                                    "idno"
+                                ],
+                                "attributes": {
+                                    "ca_list_items.is_enabled": 1
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_NOMENCLATURALSTATUS_32": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "NOMENCLATURALSTATUS",
+                    "destination": "ca_list_items.nomenclaturalStatus",
+                    "settings": {
+                        "refineries": [
+                            "listItemHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemHierarchyBuilder_list": "nomenclaturalStatus",
+                        "listItemHierarchyBuilder_parents": [
+                            {
+                                "type": "concept",
+                                "idno": "^NOMENCLATURALSTATUS",
+                                "name": "^NOMENCLATURALSTATUS",
+                                "ignoreParent": true,
+                                "matchOn": [
+                                    "idno"
+                                ],
+                                "attributes": {
+                                    "ca_list_items.is_enabled": 1
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CHANGEDCOMBINATION_33": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CHANGEDCOMBINATION",
+                    "destination": "ca_list_items.changedCombination",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_TAXONREMARKS_34": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "TAXONREMARKS",
+                    "destination": "ca_list_items.taxonRemarks",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_TAGNAME_35": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "TAGNAME",
+                    "destination": "ca_list_items.tagName",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_ACCESSSTATUS_36": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ACCESSSTATUS",
+                    "destination": "ca_list_items.access",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_ACCESSREASON_37": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ACCESSREASON",
+                    "destination": "ca_list_items.accessReason",
+                    "settings": {
+                        "refineries": [
+                            "listItemHierarchyBuilder"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemHierarchyBuilder_list": "accessReason",
+                        "listItemHierarchyBuilder_parents": [
+                            {
+                                "type": "concept",
+                                "idno": "^ACCESSREASON",
+                                "name": "^ACCESSREASON",
+                                "ignoreParent": true,
+                                "matchOn": [
+                                    "idno"
+                                ],
+                                "attributes": {
+                                    "ca_list_items.is_enabled": 1
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDBY_38": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDBY",
+                    "destination": "ca_list_items.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_CREATEDATE_39": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDATE",
+                    "destination": "ca_list_items.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDBY_40": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDBY",
+                    "destination": "ca_list_items.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_UPDATEDATE_41": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDATE",
+                    "destination": "ca_list_items.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "_group_1_42": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:46:1",
+                    "destination": "ca_list_items.is_enabled",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

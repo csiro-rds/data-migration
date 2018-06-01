@@ -1,0 +1,17 @@
+connections:
+    collectionTwobiolink:
+        password: SourceAnicPassword
+    collectionTwointerim:
+        database: InterimAnicDatabase
+        password: InterimAnicPassword
+    collectionOneibis:
+        database: CMS_INT
+        password: SourceIbisPassword
+    collectionOneinterim:
+        database: InterimAnhDatabase
+        password: InterimAnhPassword
+    collectiveaccess:
+        database: CollectiveAccessDatabase
+        host: CollectiveAccessHost
+        username: CollectiveAccessUser
+        password: CollectiveAccessPassword

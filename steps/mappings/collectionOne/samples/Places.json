@@ -1,0 +1,758 @@
+{
+    "LEGACYID_LOCN": {
+        "name": "LEGACYID_LOCN",
+        "type": "int(7)",
+        "default": null,
+        "nullable": false,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [
+            728220,
+            855640,
+            208360,
+            180102,
+            208579,
+            868630,
+            868236,
+            518658,
+            632905,
+            393576,
+            455784,
+            553798,
+            821639,
+            858100,
+            710798,
+            714902,
+            811725,
+            802394,
+            810111,
+            818643,
+            855604,
+            867785,
+            871295,
+            885233,
+            898802,
+            937522,
+            937525,
+            937340,
+            99855,
+            116389,
+            45937,
+            71984,
+            87313,
+            889525,
+            890480,
+            898695,
+            899696,
+            933496,
+            929344
+        ],
+        "searchClauses": [
+            "LEGACYID_LOCN % 1000 = 0"
+        ]
+    },
+    "LEGACYID_RG": {
+        "name": "LEGACYID_RG",
+        "type": "int(5)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LOCALITY": {
+        "name": "LOCALITY",
+        "type": "varchar(600)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "VERBATIMLOCALITY": {
+        "name": "VERBATIMLOCALITY",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VERBATIMCOORDINATESYSTEM": {
+        "name": "VERBATIMCOORDINATESYSTEM",
+        "type": "varchar(25)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VERBATIMLATITUDE": {
+        "name": "VERBATIMLATITUDE",
+        "type": "varchar(125)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VERBATIMLONGITUDE": {
+        "name": "VERBATIMLONGITUDE",
+        "type": "varchar(125)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COORDINATESZONE": {
+        "name": "COORDINATESZONE",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COORDINATESEASTING": {
+        "name": "COORDINATESEASTING",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COORDINATESNORTHING": {
+        "name": "COORDINATESNORTHING",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "NEARESTNAMEDPLACE": {
+        "name": "NEARESTNAMEDPLACE",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DISTANCEFROMPLACE": {
+        "name": "DISTANCEFROMPLACE",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DIRECTIONFROMPLACE": {
+        "name": "DIRECTIONFROMPLACE",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LOCATIONREMARKS": {
+        "name": "LOCATIONREMARKS",
+        "type": "varchar(426)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "MUNICIPALITY": {
+        "name": "MUNICIPALITY",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LOCATIONID": {
+        "name": "LOCATIONID",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "HIGHERGEOGRAPHYID": {
+        "name": "HIGHERGEOGRAPHYID",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "HIGHERGEOGRAPHY": {
+        "name": "HIGHERGEOGRAPHY",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CONTINENT": {
+        "name": "CONTINENT",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "WATERBODY": {
+        "name": "WATERBODY",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ISLANDGROUP": {
+        "name": "ISLANDGROUP",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COUNTRY": {
+        "name": "COUNTRY",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "STATEPROVINCE": {
+        "name": "STATEPROVINCE",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COUNTY": {
+        "name": "COUNTY",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CollectionTwoREGION": {
+        "name": "CollectionTwoREGION",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "BARLOWREGION": {
+        "name": "BARLOWREGION",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DECIMALLATITUDE": {
+        "name": "DECIMALLATITUDE",
+        "type": "FLOAT",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "# null island\nDECIMALLATITUDE = 0 AND DECIMALLONGITUDE = 0 LIMIT 5",
+            "DECIMALLATITUDE IS NULL AND DECIMALLONGITUDE IS NULL LIMIT 5",
+            "DECIMALLATITUDE IS NULL AND DECIMALLONGITUDE IS NOT NULL LIMIT 5",
+            "DECIMALLATITUDE IS NOT NULL AND DECIMALLONGITUDE IS NOT NULL LIMIT 5",
+            "DECIMALLATITUDE > 90 LIMIT 5",
+            "DECIMALLATITUDE < -90 LIMIT 5"
+        ]
+    },
+    "DECIMALLONGITUDE": {
+        "name": "DECIMALLONGITUDE",
+        "type": "FLOAT",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "DECIMALLONGITUDE > 180 LIMIT 5",
+            "DECIMALLONGITUDE < -180 LIMIT 5"
+        ]
+    },
+    "GEODETICDATUM": {
+        "name": "GEODETICDATUM",
+        "type": "char(5)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COORDINATEUNCERTAINTYQUANTITY": {
+        "name": "COORDINATEUNCERTAINTYQUANTITY",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COORDINATEUNCERTAINTYUNIT": {
+        "name": "COORDINATEUNCERTAINTYUNIT",
+        "type": "char(6)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COORDINATEPRECISION": {
+        "name": "COORDINATEPRECISION",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "GEOREFERENCEDBYCODE": {
+        "name": "GEOREFERENCEDBYCODE",
+        "type": "varchar(32)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "GEOREFERENCESOURCES": {
+        "name": "GEOREFERENCESOURCES",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "GEOREFERENCEDDATE": {
+        "name": "GEOREFERENCEDDATE",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "GEOREFERENCEVERIFICATIONSTATUS": {
+        "name": "GEOREFERENCEVERIFICATIONSTATUS",
+        "type": "varchar(1)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "GEOREFERENCEREMARKS": {
+        "name": "GEOREFERENCEREMARKS",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VERBATIMELEVATION": {
+        "name": "VERBATIMELEVATION",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ELEVATIONUNIT": {
+        "name": "ELEVATIONUNIT",
+        "type": "varchar(6)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ELEVATIONMINIMUM": {
+        "name": "ELEVATIONMINIMUM",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ELEVATIONMAXIMUM": {
+        "name": "ELEVATIONMAXIMUM",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ELEVATIONBYCODE": {
+        "name": "ELEVATIONBYCODE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ELEVATIONSOURCES": {
+        "name": "ELEVATIONSOURCES",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ELEVATIONUNCERTAINTY": {
+        "name": "ELEVATIONUNCERTAINTY",
+        "type": "int(4)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VERBATIMDEPTH": {
+        "name": "VERBATIMDEPTH",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DEPTHUNIT": {
+        "name": "DEPTHUNIT",
+        "type": "char(6)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DEPTHMINIMUM": {
+        "name": "DEPTHMINIMUM",
+        "type": "decimal(4,2)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DEPTHMAXIMUM": {
+        "name": "DEPTHMAXIMUM",
+        "type": "decimal(4,2)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DISTANCEABOVESURFACEUNIT": {
+        "name": "DISTANCEABOVESURFACEUNIT",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DISTANCEABOVESURFACEMINIMUM": {
+        "name": "DISTANCEABOVESURFACEMINIMUM",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DISTANCEABOVESURFACEMAXIMUM": {
+        "name": "DISTANCEABOVESURFACEMAXIMUM",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "VERBATIMABOVESURFACE": {
+        "name": "VERBATIMABOVESURFACE",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ACCESSSTATUS": {
+        "name": "ACCESSSTATUS",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ACCESSREASON": {
+        "name": "ACCESSREASON",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "INTERNALNOTE": {
+        "name": "INTERNALNOTE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDDATE": {
+        "name": "CREATEDDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDDATE": {
+        "name": "UPDATEDDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

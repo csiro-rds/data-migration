@@ -1,0 +1,139 @@
+{
+    "importer": {
+        "importer_code": "collectionOneIdentification",
+        "table_num": "57",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneCollectionUnit",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneIdentification",
+    "importer_name": [
+        "CollectionOnearium Identification Mapping"
+    ],
+    "table": "ca_objects",
+    "settings": {},
+    "groups": {
+        "ca_list_items.preferred_labels": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "SCIENTIFICNAME",
+                    "destination": "ca_list_items",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "listItemSplitter_relationshipType": "identification",
+                        "listItemSplitter_listItemType": "collectionOneTaxon",
+                        "listItemSplitter_matchOn": [
+                            "idno"
+                        ],
+                        "listItemSplitter_list": "taxonomy",
+                        "listItemSplitter_ignoreParent": 1,
+                        "listItemSplitter_attributes": {
+                            "is_enabled": 1,
+                            "idno": "collectionOne-^LEGACYID_TAXON",
+                            "source_id": "CANB"
+                        },
+                        "listItemSplitter_interstitial": {
+                            "legacyId": [
+                                "ident-^LEGACYID_IDENT",
+                                "taxon-^LEGACYID_TAXON",
+                                "unit-^LEGACYID_CU"
+                            ],
+                            "verbatimDateIdentified": "^VERBATIMDATEIDENTIFIED",
+                            "dateIdentified": "^DATEIDENTIFIED",
+                            "currentDetFlag": "^CURRENTDETFLAG",
+                            "identifiedBy": "^IDENTIFIEDBY",
+                            "tagName": "^TAGNAME",
+                            "authorisedBy": "^AUTHORISEDBY",
+                            "identificationReferences": "^IDENTIFICATIONREFERENCES",
+                            "identificationRemarks": "^IDENTIFICATIONREMARKS",
+                            "internalNote": "^INTERNALNOTE",
+                            "identifierRole": "^IDENTIFIERROLE",
+                            "identificationQualifier": "^IDENTIFICATIONQUALIFIER",
+                            "nameAddendum": "^NAMEADDENDUM",
+                            "identificationMethod": "^IDENTIFICATIONMETHOD",
+                            "referencePage": "^REFERENCEPAGE",
+                            "identificationReferenceCode": "^IDENTIFICATIONREFERENCECODE",
+                            "identificationVerificationStat": "^IDENTIFICATIONVERIFYSTATUS",
+                            "identificationSequence": "^IDENTIFICATIONSEQUENCE",
+                            "rank": "^IDENTIFICATIONSEQUENCE",
+                            "createdBy": "^CREATEDBY",
+                            "createDate": "^CREATEDATE",
+                            "updatedBy": "^UPDATEDBY",
+                            "updateDate": "^UPDATEDATE"
+                        }
+                    }
+                }
+            ]
+        },
+        "_group_EXCHANGEUNITID_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "EXCHANGEUNITID",
+                    "destination": "ca_objects.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "collectionOneUnit-"
+                    }
+                }
+            ]
+        },
+        "_group_CANB_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:17:CANB",
+                    "destination": "ca_objects.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,68 @@
+###
+OPTIONS http://{{user}}:{{password}}@{{host}}{{path}}service.php/browse/ca_list_items
+
+###
+POST http://{{user}}:{{password}}@{{host}}{{path}}service.php/browse/ca_list_items?pretty=1&sort=hier_left
+Content-Type: application/json
+
+{
+	"criteria": {
+		"type_facet": [
+			5
+		]
+	},
+	"bundles": {
+		"ca_list_items.list_id": {},
+		"ca_list_items.idno": {},
+		"ca_list_items.preferred_labels.name_singular": {},
+		"ca_list_items.preferred_labels.name_plural": {},
+		"ca_list_items.source_id": {},
+		"ca_list_items.legacyId": {
+			"returnAsArray": true
+		},
+		"hierarchy": {
+			"template": "^ca_list_items.hierarchy.preferred_labels.name_singular"
+		},
+		"ca_list_items.parent2Taxon": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.scientificName": {},
+		"ca_list_items.simpleName": {},
+		"ca_list_items.scientificNameAuthorship": {},
+		"ca_list_items.namePublishedInYear": {},
+		"ca_list_items.taxonRank": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.nomenclaturalCode": {},
+		"ca_list_items.vernacularName": {},
+		"ca_list_items.cultivarRegistrationType": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.cultivarGroupName": {},
+		"ca_list_items.cultivarName": {},
+		"ca_list_items.tradeDesignation": {},
+		"ca_list_items.hybridFlag": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.taxonomicStatus": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.nomenclaturalStatus": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.changedCombination": {},
+		"ca_list_items.taxonRemarks": {},
+		"ca_list_items.tagName": {},
+		"ca_list_items.access": {},
+		"ca_list_items.accessReason": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.createdBy": {},
+		"ca_list_items.createDate": {},
+		"ca_list_items.updatedBy": {},
+		"ca_list_items.updateDate": {},
+		"ca_list_items.is_enabled": {}
+	}
+}
+
+###

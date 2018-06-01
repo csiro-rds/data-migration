@@ -1,0 +1,22 @@
+connections:
+    collectionTwobiolink:
+        database: CollectionTwo
+        driver: sqlserver
+        host: mssql.host.db.url
+        username: cms_collectionTwo_ro
+    collectionTwointerim:
+        driver: mysql
+        host: localhost
+        username: root
+    collectionOneibis:
+        database: CMS_PROD
+        driver: oracle
+        host: oracle.host.db.url
+        username: collectionOne_migration
+        sid: collectionOne
+    collectionOneinterim:
+        driver: mysql
+        host: localhost
+        username: localuser
+    collectiveaccess:
+        driver: mysql

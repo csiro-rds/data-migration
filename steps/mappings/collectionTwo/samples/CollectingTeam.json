@@ -1,0 +1,88 @@
+{
+    "verbatimCollectorList": {
+        "name": "verbatimCollectorList",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "collectorList": {
+        "name": "collectorList",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [],
+        "values": []
+    },
+    "siteVisitdtDateCreated": {
+        "name": "siteVisitdtDateCreated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "siteVisitvchrWhoCreated": {
+        "name": "siteVisitvchrWhoCreated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "siteVisitdtDateLastUpdated": {
+        "name": "siteVisitdtDateLastUpdated",
+        "type": "datetime",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "siteVisitvchrWhoLastUpdated": {
+        "name": "siteVisitvchrWhoLastUpdated",
+        "type": "varchar(50)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "siteVisitID": {
+        "name": "siteVisitID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "siteVisitID  % 100 = 0"
+        ],
+        "values": []
+    }
+}

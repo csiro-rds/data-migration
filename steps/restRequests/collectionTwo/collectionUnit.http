@@ -1,0 +1,37 @@
+###
+POST http://{{user}}:{{password}}@{{host}}{{path}}service.php/find/ca_objects?pretty=1&lang=en_AU&nocache=1&q=*&limit=100
+Content-Type: application/json
+
+{
+
+	"bundles": {
+		"ca_objects.type_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_objects.source_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_objects.idno":{},
+		"ca_objects.legacyId":{},
+		"ca_objects.preferred_labels.name":{},
+		"ca_objects.recordNumber":{},
+		"ca_objects.source":{
+			"convertCodesToIdno": true
+		},
+		"ca_objects.originOfRecord":{},
+		"ca_objects.lifeForm":{},
+		"ca_objects.macrohabitat":{},
+		"ca_objects.microhabitat":{},
+		"ca_objects.organismQuantity":{},
+		"ca_objects.internalNote":{},
+		"ca_objects.occurrenceRemarks":{},
+		"ca_occurrences":{},
+		"ca_objects.samplingProtocol":{},
+		"ca_objects.establishmentMeans":{},
+		"ca_objects.lifeStage":{},
+		"ca_objects.originOfMaterial":{},
+		"ca_objects.sex":{}
+	}
+}
+
+###

@@ -1,0 +1,262 @@
+{
+    "importer": {
+        "importer_code": "collectionOneLinkedIdentifier",
+        "table_num": "57",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneCollectionItem",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneLinkedIdentifier",
+    "importer_name": [
+        "CollectionOnearium Collection LinkedIdentifier Mapping"
+    ],
+    "table": "ca_objects",
+    "settings": {},
+    "groups": {
+        "_group_CANB_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:CANB",
+                    "destination": "ca_objects.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CA_IDNO_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CA_IDNO",
+                    "destination": "ca_objects.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "linkedIdentifier": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "IDENTIFIERFOR",
+                    "destination": "ca_objects.linkedIdentifierContainer.identifierFor",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "identifierFor"
+                    }
+                },
+                {
+                    "source": "LINKEDIDENTIFIER",
+                    "destination": "ca_objects.linkedIdentifierContainer.linkedIdentifier",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "LINKEDIDENTIFIERREMARKS",
+                    "destination": "ca_objects.linkedIdentifierContainer.linkedIdentifierRemarks",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "LINKEDURI",
+                    "destination": "ca_objects.linkedIdentifierContainer.linkedUri",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "TYPEOFIDENTIFIER",
+                    "destination": "ca_objects.linkedIdentifierContainer.typeOfIdentifier",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "typeOfIdentifier"
+                    }
+                },
+                {
+                    "source": "CREATEDBY",
+                    "destination": "ca_objects.linkedIdentifierContainer.liCreatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "CREATEDATE",
+                    "destination": "ca_objects.linkedIdentifierContainer.liCreateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "UPDATEBY",
+                    "destination": "ca_objects.linkedIdentifierContainer.liUpdatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "UPDATEDATE",
+                    "destination": "ca_objects.linkedIdentifierContainer.liUpdateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "LEGACYID_CI",
+                    "destination": "ca_objects.linkedIdentifierContainer.legacyId_ci",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                },
+                {
+                    "source": "LEGACYID_CU",
+                    "destination": "ca_objects.linkedIdentifierContainer.legacyId_cu",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        }
+    }
+}

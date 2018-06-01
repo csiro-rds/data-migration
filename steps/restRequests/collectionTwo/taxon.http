@@ -1,0 +1,53 @@
+POST http://{{user}}:{{password}}@{{host}}{{path}}/service.php/browse/ca_list_items?pretty=1&sort=hier_left
+Content-Type: application/json
+
+{
+	"criteria": {
+		"type_facet": [
+			4
+		]
+	},
+	"bundles": {
+		"ca_list_items.status": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.type_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_lists.list_code": {},
+		"ca_list_items.source_id": {
+			"convertCodesToIdno": true
+		},
+		"ca_list_items.legacyId": {
+			"returnAsArray": true
+		},
+		"hierarchy": {
+			"template": "<unit relativeTo='ca_list_items.hierarchy' delimiter=';'><unit relativeTo='ca_list_items'>^preferred_labels (^idno)</unit></unit>"
+		},
+		"ca_list_items.is_enabled": {},
+		"ca_list_items.scientificName": {},
+		"ca_list_items.scientificNameAuthorship": {},
+		"ca_list_items.simpleName": {},
+		"ca_list_items.namePublishedInYear": {},
+		"ca_list_items.taxonRank": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.vernacularName": {
+			"returnAsArray": true
+		},
+		"ca_list_items.taxonomicStatus": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.nomenclaturalStatus": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.changedCombination": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.taxonRemarks": {},
+		"ca_list_items.access": {
+			"convertCodesToDisplayText": true
+		},
+		"ca_list_items.speciesGroup": {}
+	}
+}

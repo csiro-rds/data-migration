@@ -1,0 +1,134 @@
+{
+    "CA_IDNO_FROMITEMID": {
+        "name": "CA_IDNO_FROMITEMID",
+        "type": "varchar(38)",
+        "default": null,
+        "nullable": true,
+        "searchClauses": [
+            "CA_IDNO_FROMITEMID IN (SELECT CA_IDNO FROM _test_collectionOne_CollectionItem)"
+        ],
+        "values": [],
+        "searchRules": [],
+        "searchValues": []
+    },
+    "CA_IDNO_TOITEMID": {
+        "name": "CA_IDNO_TOITEMID",
+        "type": "varchar(38)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ASSOCIATIONDESCRIPTION": {
+        "name": "ASSOCIATIONDESCRIPTION",
+        "type": "varchar(14)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "FROMITEMID": {
+        "name": "FROMITEMID",
+        "type": "int(8)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "FROMRELATIONSHIPDESCRIPTION": {
+        "name": "FROMRELATIONSHIPDESCRIPTION",
+        "type": "varchar(8)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "ITEMRELATIONSHIPREMARKS": {
+        "name": "ITEMRELATIONSHIPREMARKS",
+        "type": "text",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "TOITEMID": {
+        "name": "TOITEMID",
+        "type": "int(8)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "TORELATIONSHIPDESCRIPTION": {
+        "name": "TORELATIONSHIPDESCRIPTION",
+        "type": "varchar(9)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "TYPEOFITEMRELATIONSHIP": {
+        "name": "TYPEOFITEMRELATIONSHIP",
+        "type": "varchar(20)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEBY": {
+        "name": "UPDATEBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

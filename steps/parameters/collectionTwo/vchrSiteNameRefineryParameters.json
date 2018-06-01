@@ -1,0 +1,9 @@
+{
+	"placeType": "location",
+	"relationshipType": "location",
+	"attributes": {
+		"preferred_labels": "^vchrSiteName"
+	},
+	"matchOn": ["idno"],
+	"placeHierarchy": "dwc"
+}

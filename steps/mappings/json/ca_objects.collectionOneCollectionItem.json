@@ -1,0 +1,813 @@
+{
+    "importer": {
+        "importer_code": "collectionOneCollectionItem",
+        "table_num": "57",
+        "settings": {
+            "name": 0,
+            "inputFormats": [
+                "mysql"
+            ],
+            "type": "collectionOneCollectionItem",
+            "numInitialRowsToSkip": 0,
+            "existingRecordPolicy": "merge_on_idno_with_replace",
+            "errorPolicy": "stop",
+            "archiveMapping": 0,
+            "archiveDataSets": 0
+        },
+        "rules": {
+            "rules": [],
+            "environment": []
+        },
+        "deleted": "0"
+    },
+    "importer_code": "collectionOneCollectionItem",
+    "importer_name": [
+        "CollectionOnearium Collection Item Mapping"
+    ],
+    "table": "ca_objects",
+    "settings": {},
+    "groups": {
+        "_group_CANB_11": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "_CONSTANT_:14:CANB",
+                    "destination": "ca_objects.source_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_CA_IDNO_12": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CA_IDNO",
+                    "destination": "ca_objects.idno",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "_group_EXCHANGEUNITID_13": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "EXCHANGEUNITID",
+                    "destination": "ca_objects.parent_id",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "prefix": "collectionOneUnit-"
+                    }
+                }
+            ]
+        },
+        "_group_CA_IDNO_14": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CA_IDNO",
+                    "destination": "ca_objects.preferred_labels.name",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        "legacyId-ci": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_CI",
+                    "destination": "ca_objects.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "itemID-"
+                    }
+                }
+            ]
+        },
+        "legacyId-cu": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LEGACYID_CU",
+                    "destination": "ca_objects.legacyId",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "prefix": "unitID-"
+                    }
+                }
+            ]
+        },
+        "labelCollectionCode": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LABELCOLLECTIONCODE",
+                    "destination": "ca_objects.labelCollectionCode",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "accessionNo": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ACCESSIONNO",
+                    "destination": "ca_objects.accessionNo",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "suffix": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "SUFFIX",
+                    "destination": "ca_objects.suffix",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "itemType": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ITEMTYPE",
+                    "destination": "ca_objects.itemType",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "itemType"
+                    }
+                }
+            ]
+        },
+        "currentStatus": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CURRENTSTATUS",
+                    "destination": "ca_objects.currentStatus",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "currentStatus"
+                    }
+                }
+            ]
+        },
+        "currentStatusQualifier": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CURRENTSTATUSQUALIFIER",
+                    "destination": "ca_objects.currentStatusQualifier",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "currentStatusQualifier"
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CONDITION",
+                    "destination": "ca_objects.condition",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "condition"
+                    }
+                }
+            ]
+        },
+        "count": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COUNT",
+                    "destination": "ca_objects.count",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "countQualifier": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "COUNTQUALIFIER",
+                    "destination": "ca_objects.countQualifier",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "countQualifier"
+                    }
+                }
+            ]
+        },
+        "sex": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "SEX",
+                    "destination": "ca_objects.sex",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "sex"
+                    }
+                }
+            ]
+        },
+        "lifeStage": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LIFESTAGE",
+                    "destination": "ca_objects.lifeStage",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "lifeStage",
+                        "listItemSplitter_delimiter": ","
+                    }
+                }
+            ]
+        },
+        "lifeForm": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "LIFEFORM",
+                    "destination": "ca_objects.lifeForm",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "lifeForm"
+                    }
+                }
+            ]
+        },
+        "originOfRecord": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ORIGINOFRECORD",
+                    "destination": "ca_objects.originOfRecord",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "basisOfRecord": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "BASISOFRECORD",
+                    "destination": "ca_objects.basisOfRecord",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "basisOfRecord_types"
+                    }
+                }
+            ]
+        },
+        "dcType": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "DCTERMSTYPE",
+                    "destination": "ca_objects.dcType",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "dc_type"
+                    }
+                }
+            ]
+        },
+        "access": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ACCESSSTATUS",
+                    "destination": "ca_objects.access",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "accessReason": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ACCESSREASON",
+                    "destination": "ca_objects.accessReason",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "accessReason"
+                    }
+                }
+            ]
+        },
+        "accessionDate": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ACCESSIONDATE",
+                    "destination": "ca_objects.accessionDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "deaccessionDate": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "DEACCESSIONDATE",
+                    "destination": "ca_objects.deaccessionDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "internalNote": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "INTERNALNOTE",
+                    "destination": "ca_objects.internalNote",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "itemRemarks": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "ITEMREMARKS",
+                    "destination": "ca_objects.itemRemarks",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "internalCatalogNumber": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "INTERNALCATALOGNUMBER",
+                    "destination": "ca_objects.internalCatalogNumber",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "status": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "RECORDSTATUS",
+                    "destination": "ca_objects.status",
+                    "settings": {
+                        "refineries": [
+                            "listItemSplitter"
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1,
+                        "listItemSplitter_listItemType": "concept",
+                        "listItemSplitter_list": "workflow_statuses"
+                    }
+                }
+            ]
+        },
+        "createdBy": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDBY",
+                    "destination": "ca_objects.createdBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "createDate": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "CREATEDATE",
+                    "destination": "ca_objects.createDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "updatedBy": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDBY",
+                    "destination": "ca_objects.updatedBy",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        },
+        "updateDate": {
+            "settings": [
+                null
+            ],
+            "items": [
+                {
+                    "source": "UPDATEDATE",
+                    "destination": "ca_objects.updateDate",
+                    "settings": {
+                        "refineries": [
+                            null
+                        ],
+                        "original_values": [
+                            ""
+                        ],
+                        "replacement_values": [
+                            ""
+                        ],
+                        "skipIfEmpty": 1
+                    }
+                }
+            ]
+        }
+    }
+}

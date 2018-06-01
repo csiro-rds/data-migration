@@ -1,0 +1,95 @@
+/*
+ * Gradle build script for CSIRO's Providence themes.
+ * Built for Gradle v2.6
+ *
+ * Primary tasks are:
+ *  clean - Remove the contents of the build folder ready for a full rebuild.
+ *  build - Compiles the code, builds the jar, and runs the tests (this is the most commonly used command)
+ */
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("org.hidetake:gradle-ssh-plugin:0.3.10")
+    }
+}
+
+task wrapper(type: Wrapper) { gradleVersion = '2.6' }
+
+apply plugin: 'maven-publish'
+apply plugin: 'ssh'
+apply plugin: 'distribution'
+
+group = 'au.csiro'
+description = 'CMS Data Migration'
+
+ext {
+    majorVersion = 0
+    minorVersion = 1
+    installDir = 'build/install/'+project.name
+}
+
+apply from: 'gradle/versioning.gradle'
+
+//=====================================================================================================================
+//
+// Main artifact build configuration
+//
+//=====================================================================================================================
+
+
+distributions {
+    main {
+        baseName = 'data-migration'
+        contents {
+            from(".") {
+                include "README.md"
+                include "composer.*"
+                include "bin/**"
+                include "config/**"
+                include "images/**"
+                include "src/**"
+				include "steps/**"
+				include "vendor/**"
+            }
+            from("build/resources/main/resources") {
+                include "version.properties"
+            }
+        }
+    }
+}
+
+distZip.dependsOn {
+    makeVersionProps
+}
+
+
+//=====================================================================================================================
+//
+// Include other build files
+//
+//=====================================================================================================================
+
+
+// We conditionally apply the publish script so that we don't need the properties for all builds.
+if (gradle.startParameter.taskNames.any{it =~ /publish/}) {
+    apply from: 'gradle/publish.gradle'
+}
+// We conditionally apply the migrate script so that we don't need the properties for all builds.
+if (gradle.startParameter.taskNames.any{it =~ /migrate/}) {
+    apply from: 'gradle/migrate.gradle'
+}
+
+// We conditionally apply the deploy script so that we don't need the properties for all builds.
+if (gradle.startParameter.taskNames.contains('deployToServer')) {
+    apply from: 'gradle/deploy.gradle'
+}
+
+// The status task does a health check on the deployed system and throws an exception if its not healthy
+if (gradle.startParameter.taskNames.contains('status')) {
+    apply from: 'gradle/status.gradle'
+}

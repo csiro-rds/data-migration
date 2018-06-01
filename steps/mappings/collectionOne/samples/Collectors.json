@@ -1,0 +1,86 @@
+{
+    "LEGACYID_COLL": {
+        "name": "LEGACYID_COLL",
+        "type": "int(5)",
+        "default": null,
+        "nullable": false,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "LEGACYID_COLL IN (SELECT DISTINCT LEGACYID_COLL FROM CMS_TEAM_MEMBERSHIP_V t JOIN CMS_COLLECTING_EVENT_V e ON t.LEGACYID_CTM = e.LEGACYID_CTM WHERE LEGACYID_CE % 1000 = 0)",
+            "LEGACYID_COLL IN (SELECT DISTINCT LEGACYID_COLL FROM CMS_TEAM_MEMBERSHIP_V t JOIN CMS_COLLECTING_EVENT_V e ON t.LEGACYID_CTM = e.LEGACYID_CTM WHERE LEGACYID_CE IN(728220,855640,208360))",
+            "LEGACYID_COLL IN (SELECT DISTINCT LEGACYID_COLL FROM CMS_TEAM_MEMBERSHIP_V WHERE LEGACYID_CTM IN (9463, 9846, 319, 7729, 15350, 34314, 6604, 7493, 2, 40870, 41840, 5398, 35688, 18680, 18680, 5398, 2720, 9377, 9377, 2009, 9377, 9377, 41834, 2730, 44581, 4, 9377, 2235, 3954, 5447, 3353, 43171, 43461, 24021, 44462, 1407))"
+        ]
+    },
+    "DISCIPLINENAME": {
+        "name": "DISCIPLINENAME",
+        "type": "char(4)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "COLLECTORNAME": {
+        "name": "COLLECTORNAME",
+        "type": "varchar(80)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}

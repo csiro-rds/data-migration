@@ -1,0 +1,29 @@
+{
+	"formatWithTemplate": "^intDateStart - ^intDateEnd",
+	"applyRegularExpressions": [
+		{
+			"match": "\\b([0-9]{4})([0-9]{2})([0-9]{2})\\b",
+			"replaceWith": "\\1-\\2-\\3"
+		},
+		{
+			"match": "([0-9])-00-00\\b",
+			"replaceWith": "\\1"
+		},
+		{
+			"match": "([0-9])-00\\b",
+			"replaceWith": "\\1"
+		},
+		{
+			"match": "\\b0 - 0\\b",
+			"replaceWith": "undated"
+		},
+		{
+			"match": " - 0\\b",
+			"replaceWith": ""
+		},
+		{
+			"match": "\\b0 - ",
+			"replaceWith": ""
+		}
+	]
+}

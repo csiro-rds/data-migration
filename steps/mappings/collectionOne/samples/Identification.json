@@ -1,0 +1,431 @@
+{
+    "SCIENTIFICNAME": {
+        "name": "SCIENTIFICNAME",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LEGACYID_IDENT": {
+        "name": "LEGACYID_IDENT",
+        "type": "int(8)",
+        "default": null,
+        "nullable": false,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [
+            81,
+            82,
+            142,
+            143,
+            144,
+            3003,
+            8489,
+            8804,
+            14487,
+            14558,
+            1197,
+            2308,
+            7523,
+            7790,
+            16055,
+            103460,
+            103836,
+            103837,
+            109131,
+            152263,
+            103859,
+            152265,
+            167778,
+            167785,
+            167786,
+            103461,
+            109731,
+            152415,
+            167771,
+            195225,
+            3193,
+            3222,
+            8494,
+            80301,
+            116152,
+            121157,
+            267202,
+            273409,
+            299916,
+            149094,
+            247873,
+            260216,
+            275153,
+            392691,
+            116095,
+            122249,
+            136163,
+            177226,
+            178484,
+            150511,
+            185034,
+            238468,
+            238488,
+            368151,
+            158200,
+            159998,
+            171955,
+            15770,
+            21887,
+            32788,
+            92407,
+            182973,
+            922916,
+            1022212,
+            1619237,
+            858803,
+            1195515,
+            1195517,
+            1195519,
+            362673,
+            365749,
+            540270,
+            1188951,
+            1201164
+        ],
+        "searchClauses": []
+    },
+    "LEGACYID_TAXON": {
+        "name": "LEGACYID_TAXON",
+        "type": "int(6)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "LEGACYID_CU": {
+        "name": "LEGACYID_CU",
+        "type": "int(7)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [
+            253875,
+            265664,
+            301516,
+            1031848,
+            1031401,
+            608445,
+            711067,
+            515265,
+            554040,
+            654692,
+            991631,
+            1020167,
+            824781,
+            826664,
+            982724,
+            936355,
+            968186,
+            962342,
+            1017247,
+            1030918,
+            1034835,
+            1051087,
+            1066584,
+            1105963,
+            1105966,
+            1105780,
+            149314,
+            162212,
+            58746,
+            106453,
+            127254,
+            1056182,
+            1057289,
+            1066466,
+            1067545,
+            1101628,
+            1097289
+        ],
+        "searchClauses": [
+            "LEGACYID_CU IN (SELECT DISTINCT LEGACYID_CU FROM _test_collectionOne_CollectionUnit)"
+        ]
+    },
+    "VERBATIMDATEIDENTIFIED": {
+        "name": "VERBATIMDATEIDENTIFIED",
+        "type": "varchar(32)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "DATEIDENTIFIED": {
+        "name": "DATEIDENTIFIED",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": [
+            "LENGTH(DATEIDENTIFIED) NOT IN (0, 4, 7, 10)"
+        ]
+    },
+    "CURRENTDETFLAG": {
+        "name": "CURRENTDETFLAG",
+        "type": "VARCHAR(3)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFIEDBY": {
+        "name": "IDENTIFIEDBY",
+        "type": "varchar(60)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "TAGNAME": {
+        "name": "TAGNAME",
+        "type": "varchar(0)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "AUTHORISEDBY": {
+        "name": "AUTHORISEDBY",
+        "type": "varchar(0)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFICATIONREFERENCES": {
+        "name": "IDENTIFICATIONREFERENCES",
+        "type": "varchar(0)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFICATIONREMARKS": {
+        "name": "IDENTIFICATIONREMARKS",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "INTERNALNOTE": {
+        "name": "INTERNALNOTE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFIERROLE": {
+        "name": "IDENTIFIERROLE",
+        "type": "varchar(5)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFICATIONQUALIFIER": {
+        "name": "IDENTIFICATIONQUALIFIER",
+        "type": "varchar(12)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "NAMEADDENDUM": {
+        "name": "NAMEADDENDUM",
+        "type": "char(7)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFICATIONMETHOD": {
+        "name": "IDENTIFICATIONMETHOD",
+        "type": "varchar(0)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "REFERENCEPAGE": {
+        "name": "REFERENCEPAGE",
+        "type": "varchar(0)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFICATIONREFERENCECODE": {
+        "name": "IDENTIFICATIONREFERENCECODE",
+        "type": "varchar(0)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFICATIONVERIFYSTATUS": {
+        "name": "IDENTIFICATIONVERIFYSTATUS",
+        "type": "varchar(0)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "IDENTIFICATIONSEQUENCE": {
+        "name": "IDENTIFICATIONSEQUENCE",
+        "type": "int(2)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "distinctValues"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDBY": {
+        "name": "CREATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "CREATEDATE": {
+        "name": "CREATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDBY": {
+        "name": "UPDATEDBY",
+        "type": "varchar(30)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "UPDATEDATE": {
+        "name": "UPDATEDATE",
+        "type": "varchar(255)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [
+            "firstMedianLast"
+        ],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "RECORDNUMBER": {
+        "name": "RECORDNUMBER",
+        "type": "varchar(40)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    },
+    "EXCHANGEUNITID": {
+        "name": "EXCHANGEUNITID",
+        "type": "int(11)",
+        "default": null,
+        "nullable": true,
+        "values": [],
+        "searchRules": [],
+        "searchValues": [],
+        "searchClauses": []
+    }
+}
